@@ -19,12 +19,17 @@ public class Cambio extends Operacion implements Serializable  {
 	
 	private PRIORIDADES prioridad;
 	private double interes;
-	private Monedero monedero2;
+	private int idMonederoDestino;
 	
 	// CONSTRUCTOR
-	public Cambio (int idCambio, PRIORIDADES prioridad) {
-		
-		super(idOperacion, cantidad, monedero);
+	public Cambio (
+			int idOperacion,
+			double cantidad,
+			int monederoOrigen,
+			int idCambio,
+			PRIORIDADES prioridad)
+	{	
+		super(idOperacion, cantidad, monederoOrigen);
 		
 		this.idCambio = idCambio;
 		this.prioridad = prioridad;
@@ -53,7 +58,7 @@ public class Cambio extends Operacion implements Serializable  {
 	}
 	
 	public PRIORIDADES getPrioridad() {
-		return this.prioridad;
+		return prioridad;
 	}
 					
 	public void setPrioridad(PRIORIDADES prioridad) {
@@ -61,19 +66,19 @@ public class Cambio extends Operacion implements Serializable  {
 	}
 	
 	public double getInteres() {
-		return this.interes;
+		return interes;
 	}
 					
 	public void setInteres(Double interes) {
 		this.interes = interes;
 	}
 	
-	public Monedero getMonedero2() {
-		return this.monedero2;
+	public int getIdMonederoDestino() {
+		return idMonederoDestino;
 	}
 					
-	public void setMonedero2(Monedero monedero2) {
-		this.monedero2 = monedero2;
+	public void setMonedero2(int idMonederoDestino) {
+		this.idMonederoDestino = idMonederoDestino;
 	}
 	
 

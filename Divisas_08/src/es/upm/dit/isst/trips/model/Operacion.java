@@ -10,23 +10,29 @@ public class Operacion implements Serializable {
 
 	// Primary key
 		@Id
-		private int idOperacion;
-			
-		protected boolean operacionRealizada;
-		private double cantidad;
+		protected int idOperacion;
+		
+		protected double cantidad;
+		protected int idMonederoOrigen;	
+		private boolean operacionRealizada;
 		private Date fechaOperacion;
-		private Monedero monedero;
 		
 		
-		public Operacion(int idOperacion, double cantidad, Monedero monedero) {
+		public Operacion() {
+			this.operacionRealizada = false;
+			
+		}
+		
+		public Operacion(int idOperacion, double cantidad, int monederoOrigen) {
 			this.idOperacion = idOperacion;
 			this.operacionRealizada = false;
 			this.cantidad = cantidad;
-			this.monedero = monedero;
+			this.idMonederoOrigen = monederoOrigen;
 		}
+		
 			
 		public int getIdOperacion() {
-			return this.idOperacion;
+			return idOperacion;
 		}
 		
 		public void setIdOperacion(int idOperacion) {
@@ -34,7 +40,7 @@ public class Operacion implements Serializable {
 		}
 		
 		public boolean getOperacionRealizada() {
-			return this.operacionRealizada;
+			return operacionRealizada;
 		}
 		
 		public void setOperacionRealizada(boolean operacionRealizada) {
@@ -42,7 +48,7 @@ public class Operacion implements Serializable {
 		}
 		
 		public double getCantidad() {
-			return this.cantidad;
+			return cantidad;
 		}
 		
 		public void setCantidad(double cantidad) {
@@ -50,19 +56,19 @@ public class Operacion implements Serializable {
 		}
 		
 		public Date getFechaOperacion() {
-			return this.fechaOperacion;
+			return fechaOperacion;
 		}
 		
 		public void setFechaOperacion(Date fechaOperacion) {
 			this.fechaOperacion = fechaOperacion;
 		}
 		
-		public Monedero getMonedero() {
-			return this.monedero;
+		public int getIdMonederoOrigen() {
+			return idMonederoOrigen;
 		}
 		
-		public void setMonedero(Monedero monedero) {
-			this.monedero = monedero;
+		public void setIdMonederoOrigen(int idMonederoOrigen) {
+			this.idMonederoOrigen = idMonederoOrigen;
 		}
 		
 }

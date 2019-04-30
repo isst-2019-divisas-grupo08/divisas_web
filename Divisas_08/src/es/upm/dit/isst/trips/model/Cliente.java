@@ -51,7 +51,7 @@ public class Cliente implements Serializable {
 	
 	// Getters y Setters
 	public String getEmail() {
-		return this.email;
+		return email;
 	}
 	
 	public void setEmail(String email) {
@@ -59,7 +59,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getPassword() {
-		return this.password;
+		return password;
 	}
 	
 	public void setPassword(String password) {
@@ -67,7 +67,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getNombre() {
-		return this.nombre;
+		return nombre;
 	}
 	
 	public void setNombre(String nombre) {
@@ -75,7 +75,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getApellido() {
-		return this.apellido;
+		return apellido;
 	}
 	
 	public void setApellido(String apellido) {
@@ -83,7 +83,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getDNI() {
-		return this.DNI;
+		return DNI;
 	}
 	
 	public void setDNI(String DNI) {
@@ -91,7 +91,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getPais() {
-		return this.pais;
+		return pais;
 	}
 	
 	public void setPais(String pais) {
@@ -99,7 +99,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public SEXOS getSexo() {
-		return this.sexo;
+		return sexo;
 	}
 	
 	public void setSexo(SEXOS sexo) {
@@ -107,7 +107,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getTratamiento() {
-		return this.tratamiento;
+		return tratamiento;
 	}
 	
 	public void setTratamiento(String tratamiento) {
@@ -115,7 +115,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public Date getNacimiento() {
-		return this.nacimiento;
+		return nacimiento;
 	}
 	
 	public void setNacimiento(Date nacimiento) {
@@ -123,7 +123,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getDireccion() {
-		return this.direccion;
+		return direccion;
 	}
 	
 	public void setDireccion(String direccion) {
@@ -131,7 +131,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public int getTelefono() {
-		return this.telefono;
+		return telefono;
 	}
 	
 	public void setTelefono(int telefono) {
@@ -139,7 +139,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public Cuenta getCuenta() {
-		return this.cuenta;
+		return cuenta;
 	}
 	
 	public void setCuenta(Cuenta cuenta) {
