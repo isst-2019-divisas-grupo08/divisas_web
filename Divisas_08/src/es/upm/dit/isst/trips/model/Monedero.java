@@ -6,46 +6,59 @@ import javax.persistence.Id;
 
 public class Monedero implements Serializable {
 	
+	public static enum SYMBOLS {
+			€, $, A$, C$, Fr, £, ¥, 		
+	}
+	
+	public static enum DIVISAS {
+		EURO, DOLAR_AMERICANO, DOLAR_AUSTRALIANO, DOLAR_CANADIENSE, FRANCO_SUIZO, LIBRA, YEN, 		
+}
+	
 	// Primary key
 	@Id
 	private int id;
-		
-	private String divisa, simbolo;
+	
+	private SYMBOLS symbol;
+	private DIVISAS divisa;
 	private int cantidad;
 	
 	
 	// CONSTRUCTOR	
-	public Monedero() {
+	public Monedero(int id, DIVISAS divisa) {
+		
+		this.id = id;
+		this.divisa = divisa;
+		this.cantidad = 0;
 		
 	}
 	
 	// Getters y Setters
 	public int getId() {
-		return id;
+		return this.id;
 	}
 						
 	public void setId(int id) {
 		this.id = id;
 	}
 	
-	public String getDivisa() {
-		return divisa;
+	public DIVISAS getDivisa() {
+		return this.divisa;
 	}
 						
-	public void setDivisa(String divisa) {
+	public void setDivisa(DIVISAS divisa) {
 		this.divisa = divisa;
 	}
 	
-	public String getSimbolo() {
-		return simbolo;
+	public SYMBOLS getSimbolo() {
+		return this.symbol;
 	}
 						
-	public void setSimbolo(String simbolo) {
-		this.simbolo = simbolo;
+	public void setSimbolo(SYMBOLS symbol) {
+		this.symbol = symbol;
 	}
 	
 	public int getCantidad() {
-		return cantidad;
+		return this.cantidad;
 	}
 						
 	public void setCantidad(int cantidad) {

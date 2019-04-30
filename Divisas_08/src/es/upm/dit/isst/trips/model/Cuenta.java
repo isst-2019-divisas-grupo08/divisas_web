@@ -1,6 +1,7 @@
 package es.upm.dit.isst.trips.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Collection;
 
 import javax.persistence.Id;
@@ -18,13 +19,19 @@ public class Cuenta implements Serializable {
 		private int tarjeta;
 	
 	
-		public Cuenta() {
+		public Cuenta(int numeroCuenta, int tarjeta) {
+			
+			this.numeroCuenta = numeroCuenta;
+			this.tarjeta = tarjeta;
+			
+			this.monederos = new ArrayList<Monedero>();
+			this.historial = new ArrayList<Operacion>();
 		
 		}
 		
 		// Getters y Setters
 		public int getNumeroCuenta() {
-			return numeroCuenta;
+			return this.numeroCuenta;
 		}
 		
 		public void setNumeroCuenta(int numeroCuenta) {
@@ -32,7 +39,7 @@ public class Cuenta implements Serializable {
 		}
 		
 		public Collection<Monedero> getMonederos() {
-			return monederos;
+			return this.monederos;
 		}
 		
 		public void setEmail(Collection<Monedero> monederos) {
@@ -40,11 +47,25 @@ public class Cuenta implements Serializable {
 		}
 		
 		public Collection<Operacion> getHistorialOperaciones() {
-			return historial;
+			return this.historial;
 		}
 		
 		public void setHistorialOperaciones(Collection<Operacion> historial) {
 			this.historial = historial;
+		}
+		
+		public int getTarjeta() {
+			return this.tarjeta;
+		}
+		
+		public void setTarjeta(int tarjeta) {
+			this.tarjeta = tarjeta;
+		}
+		
+		// Funciones de Cuenta
+		
+		public void cleanMonederos() {
+			this.monederos.clear();
 		}
 
 }

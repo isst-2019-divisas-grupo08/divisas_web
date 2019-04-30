@@ -1,45 +1,73 @@
 package es.upm.dit.isst.trips.model;
 
 import java.io.Serializable;
-
+import java.util.Date;
 import javax.persistence.Id;
 
-
 public class Cliente implements Serializable {
+	
+	public static enum SEXOS {
+		HOMBRE, MUJER, OTRO
+	}
+	
+	public static enum TRATAMIENTOS {
+		Don, Do�a, Sr, Sra
+	}
 	
 	// Primary key
 	@Id
 	private int id;
 	
-	private String email, contraseña, nombre, apellido, DNI, pais, sexo, tratamiento, nacimiento, direccion;
+	private String email, password, nombre, apellido, DNI, pais, tratamiento, direccion;
+	private SEXOS sexo;
+	private Date nacimiento;
 	private int telefono;
 	private Cuenta cuenta;
 
-	// Constructor ¿necesario?
-	public Cliente() {
-		
+	// Constructor
+	public Cliente(
+			int id,
+			String email,
+			String password,
+			String nombre,
+			String apellido,
+			String DNI, 
+			String pais,
+			String tratamiento,
+			SEXOS sexo,
+			Date nacimiento)
+	{		
+		this.id = id;
+		this.email = email;
+		this.password = password;
+		this.nombre = nombre;
+		this.apellido = apellido;
+		this.DNI = DNI;
+		this.pais = pais;
+		this.tratamiento = tratamiento;
+		this.sexo = sexo;
+		this.nacimiento = nacimiento;
 	}
-	
 	
 	// Getters y Setters
 	public String getEmail() {
-		return email;
+		return this.email;
 	}
 	
 	public void setEmail(String email) {
 		this.email = email;
 	}
 	
-	public String getContraseña() {
-		return contraseña;
+	public String getPassword() {
+		return this.password;
 	}
 	
-	public void setContraseña(String contraseña) {
-		this.contraseña = contraseña;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public String getNombre() {
-		return nombre;
+		return this.nombre;
 	}
 	
 	public void setNombre(String nombre) {
@@ -47,7 +75,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getApellido() {
-		return apellido;
+		return this.apellido;
 	}
 	
 	public void setApellido(String apellido) {
@@ -55,7 +83,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getDNI() {
-		return DNI;
+		return this.DNI;
 	}
 	
 	public void setDNI(String DNI) {
@@ -63,39 +91,39 @@ public class Cliente implements Serializable {
 	}
 	
 	public String getPais() {
-		return pais;
+		return this.pais;
 	}
 	
 	public void setPais(String pais) {
 		this.pais = pais;
 	}
 	
-	public String getSexo() {
-		return sexo;
+	public SEXOS getSexo() {
+		return this.sexo;
 	}
 	
-	public void setSexo(String sexo) {
+	public void setSexo(SEXOS sexo) {
 		this.sexo = sexo;
 	}
 	
 	public String getTratamiento() {
-		return tratamiento;
+		return this.tratamiento;
 	}
 	
 	public void setTratamiento(String tratamiento) {
 		this.tratamiento = tratamiento;
 	}
 	
-	public String getNacimiento() {
-		return nacimiento;
+	public Date getNacimiento() {
+		return this.nacimiento;
 	}
 	
-	public void setNacimiento(String nacimiento) {
-		this.email = nacimiento;
+	public void setNacimiento(Date nacimiento) {
+		this.nacimiento = nacimiento;
 	}
 	
 	public String getDireccion() {
-		return direccion;
+		return this.direccion;
 	}
 	
 	public void setDireccion(String direccion) {
@@ -103,7 +131,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public int getTelefono() {
-		return telefono;
+		return this.telefono;
 	}
 	
 	public void setTelefono(int telefono) {
@@ -111,7 +139,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public Cuenta getCuenta() {
-		return cuenta;
+		return this.cuenta;
 	}
 	
 	public void setCuenta(Cuenta cuenta) {
