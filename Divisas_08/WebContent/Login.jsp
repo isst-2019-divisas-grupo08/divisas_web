@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Iniciar Sesión</title>
 
 <link href="css/Login.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">

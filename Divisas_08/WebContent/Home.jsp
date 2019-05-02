@@ -5,7 +5,7 @@
 
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Tr$ps</title>
 
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
 

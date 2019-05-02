@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Registrarse</title>
 
 <link href="css/Register.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
