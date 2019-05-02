@@ -3,8 +3,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Registrarse</title>
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+<title>Registro | Tr$ps</title>
 
 <link href="css/Register.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
@@ -23,7 +31,7 @@
       <div class="links">
         <a href="Login.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
-        <a href="operations" >OPERACIONES</a>
+        <a href="Operations.jsp" >OPERACIONES</a>
         <a href="help">AYUDA</a>
       </div>
 
@@ -42,9 +50,22 @@
 
 <form class="registerForm" action="RegistroServlet">
 
-<input type="email" name="email" placeholder="Introduzca su email">
-<input type="password" name="password" placeholder="Introduzca su contraseña"/>
- 
+<div class="user">
+	<input type="email" name="email" placeholder="Email">
+</div>
+
+<div class="pass">
+<input type="password" name="password" placeholder="Contraseña"/>
+</div>
+
+<div class="pass">
+<input type="password" name="password" placeholder="Confirmar contraseña"/>
+</div>
+
+
+
+<!-- 
+
  <select name="tratamiento">
 <option>Don</option>
 <option>Doña</option>
@@ -52,12 +73,14 @@
 <option>Sra</option>
 </select>
 
-<input type="text" name="nombre" placeholder="Introduzca su nombre"/>
-<input type="text" name="apellido" placeholder="Introduzca sus apellidos"/>
-<input type="text" name="dni" placeholder="Introduzca su DNI/NIF"/>
-<input type="text" name="pais" placeholder="Introduzca su país"/>
+<input type="text" name="nombre" placeholder="Nombre"/>
 
-<input type="text" name="direccion" placeholder="Introduzca su contraseña"/>
+<input type="text" name="apellido" placeholder="Apellidos"/>
+
+<input type="text" name="dni" placeholder="DNI/NIF"/>
+
+<input type="text" name="pais" placeholder="País"/>
+
  
  <select name="transporte">
 <option>Hombre</option>
@@ -66,11 +89,11 @@
 </select>
 
 <input type="number" name="telefono" placeholder="Introduzca su nº de teléfono"/>
-<input type="text" name="cuenta" placeholder="Introduzca su cuenta"/>
 
+ -->
+ 
 
-
-<button type="submit">Registrarse</button>
+<input type="submit" value="Registrarse">
 
 </form>
 

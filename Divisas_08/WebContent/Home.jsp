@@ -8,16 +8,14 @@
 <html>
 <head>
 
-<meta charset="ISO-8859-1">
-<title>Tr$ps</title>
-
-
+<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Tr$ps</title>
+
+<title>Home | Tr$ps</title>
 
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
 </head>

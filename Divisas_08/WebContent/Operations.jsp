@@ -15,17 +15,15 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Iniciar Sesión | Tr$ps</title>
+<title>Operaciones | Tr$ps</title>
 
-<link href="css/Login.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
     <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
-          <img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">        
+        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">         
         </a>
       </div>
 
@@ -43,15 +41,5 @@
       
     </div>
       
-
-<div class= "frontbody">
-  Inicia sesión para acceder a tu cuenta
-</div>
-
-<div class= "loginButtons">
-  <button>Iniciar Sesión de Pedro Álvarez</button>
-  <button>Iniciar Sesión de Cristina López</button>
-  <button>Cerrar Sesión de Usuario</button>
-</div>
 </body>
 </html>

@@ -3,8 +3,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Mis Datos</title>
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Mis Datos | Tr$ps</title>
 
 <link href="css/MyData.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
@@ -23,7 +30,7 @@
       <div class="links">
         <a href="Login.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
-        <a href="operations" >OPERACIONES</a>
+        <a href="Operations.jsp" >OPERACIONES</a>
         <a href="help">AYUDA</a>
       </div>
 
