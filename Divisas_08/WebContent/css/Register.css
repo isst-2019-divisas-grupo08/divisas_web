@@ -16,3 +16,17 @@
 .frontbody:hover {
     background: rgb(163, 51, 51);
 }
+
+.registerForm {
+	
+}
+
+.registerForm input {
+	border: 0;
+    border-bottom: #cddee1 solid 3px;
+    background: 0 0;
+    padding: 0;
+    height: 44px;
+    font-size: 1em;
+    margin: 0;
+}

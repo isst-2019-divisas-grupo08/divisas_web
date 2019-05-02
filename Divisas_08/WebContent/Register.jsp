@@ -16,7 +16,7 @@
     <nav class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
-        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">          
+        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">           
         </a>
       </div>
 
@@ -37,6 +37,18 @@
 
 <div class= "frontbody">
 ¡Regístrate para disfrutar de Tr$ps!
+  </div>
+  
+  <div class="registerForm">
+  <ul>
+  <input type="text" value="User" class="input">
+  <input type="password" value="Password" class="input">
+  <input type="text" value="" class="input">
+  <input type="text" value="User" class="input">
+  <input type="text" value="User" class="input">
+  </ul>
+  
+  
   </div>
 
 </body>
