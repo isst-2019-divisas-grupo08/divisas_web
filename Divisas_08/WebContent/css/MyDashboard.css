@@ -1,0 +1,18 @@
+@charset "UTF-8";
+.centrado {
+	text-align: center;
+}
+
+.cambio {
+	background-color: #3997bd;
+	position: absolute;
+	left: 25%;
+
+}
+
+.myDashboard {
+	border-width: 4px;
+    border-style: solid;
+	border-color: #3997bd;
+	margin-bottom: 30px;
+}

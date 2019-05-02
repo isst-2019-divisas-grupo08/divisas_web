@@ -13,15 +13,15 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <title>Trip$</title>
+<link href="css/Operations.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
-<link href="css/Home.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header class="animated fadeInDown" id="navbar">
     <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
-        	<img class="imgLogo" height="45px" width="45px" src="./Assets/Img/moneda.png">
+          <img class="imgLogo" height="45px" width="45px" src="./img/moneda.png">
           <h1 class="name">Trip$</h1>           
         </a>
       </div>
@@ -41,8 +41,19 @@
     </div>
       
 </header>
-<div class ="main">
-  <h3>Contenido de la página Home</h3>
+<div class="myTransaction">
+
+    <h1>
+        LISTA DE TRANSACCIONES REALIZADAS
+    </h1>
+    
+    <ul>
+      <li>CONCEPTO: Solicitud de cambio de 200EUR a GBP</li><p>ESTADO: Procesando</p>
+      <li>CONCEPTO: Solicitud de cambio de 350GBP a EUR</li><p>ESTADO: Completado</p>
+      <li>CONCEPTO: Solicitud de cambio de 350GBP a EUR</li><p>ESTADO: Cancelado</p>
+      <li>CONCEPTO: Ingreso de 350 GBP</li><p>ESTADO: Completado</p>
+    </ul>
+    
 </div>
 </body>
 </html>

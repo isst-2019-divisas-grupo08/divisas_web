@@ -1,30 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+  pageEncoding="UTF-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Registrarse</title>
-
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+<title>Trip$</title>
 <link href="css/Register.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
-
 </head>
-
 <body>
-
-    <nav class="topnav">
+<header class="animated fadeInDown" id="navbar">
+    <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
-        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">           
+          <img class="imgLogo" height="45px" width="45px" src="./img/moneda.png">
+          <h1 class="name">Trip$</h1>           
         </a>
       </div>
 
       <div class="links">
-        <a href="Login.jsp" >MI CARTERA</a>
+        <a href="Wallet.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
-        <a href="operations" >OPERACIONES</a>
-        <a href="help">AYUDA</a>
+        <a href="Operations.jsp" >OPERACIONES</a>
+        <a href="Help.jsp">AYUDA</a>
       </div>
 
       <div class="userData">
@@ -32,17 +38,18 @@
           <a href="Login.jsp" >INICIA SESION</a>
       </div>
       
-    </nav>
-
+    </div>
+      
+</header>
 
 <div class= "frontbody">
-	¡Regístrate para disfrutar de Tr$ps!
+¡Regístrate para disfrutar de Tr$ps!
 </div>
 
+<div class="registerForm">
+    <form action="RegistroServlet">
 
-<form class="registerForm" action="RegistroServlet">
-
-<input type="email" name="email" placeholder="Introduzca su email">
+<input type="email" name="email" placeholder="Introduzca su email" style="margin-left:25%"/>
 <input type="password" name="password" placeholder="Introduzca su contraseña"/>
  
  <select name="tratamiento">
@@ -52,9 +59,9 @@
 <option>Sra</option>
 </select>
 
-<input type="text" name="nombre" placeholder="Introduzca su nombre"/>
+<input type="text" name="nombre" placeholder="Introduzca su nombre" style="margin-left:25%"/>
 <input type="text" name="apellido" placeholder="Introduzca sus apellidos"/>
-<input type="text" name="dni" placeholder="Introduzca su DNI/NIF"/>
+<input type="text" name="dni" placeholder="Introduzca su DNI/NIF" style="margin-left:25%"/>
 <input type="text" name="pais" placeholder="Introduzca su país"/>
 
 <input type="text" name="direccion" placeholder="Introduzca su contraseña"/>
@@ -73,7 +80,8 @@
 <button type="submit">Registrarse</button>
 
 </form>
-
+  
+</div>
 
 </body>
 </html>
