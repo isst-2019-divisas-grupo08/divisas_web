@@ -1,0 +1,18 @@
+@charset "ISO-8859-1";
+
+.frontbody {
+    margin: 90px auto;
+    height: 298px;
+    background: #3997bd;
+    color: #fff;
+    font-family: Lato;
+    font-weight: 900;
+    font-size: 3em;
+    text-align: center;
+    line-height: 298px;
+    transition: all 1s ease;
+}
+
+.frontbody:hover {
+    background: rgb(163, 51, 51);
+}

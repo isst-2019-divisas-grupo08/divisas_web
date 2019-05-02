@@ -7,11 +7,10 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
+<link href="css/Login.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
 
-
 </head>
-
 <body>
 
     <nav class="topnav">
@@ -34,7 +33,17 @@
       </div>
       
     </nav>
-    
-</body>
 
+
+<div class= "frontbody">
+  Inicia sesión para acceder a tu cuenta
+  </div>
+
+<div class= "loginButtons">
+  <button>Iniciar Sesión de Pedro Álvarez</button>
+  <button>Iniciar Sesión de Cristina López</button>
+  <button>Cerrar Sesión de Usuario</button>
+</div>
+
+</body>
 </html>

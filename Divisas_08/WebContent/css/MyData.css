@@ -1,0 +1,10 @@
+@charset "ISO-8859-1";
+
+.misDatos {
+    border-width: 4px;
+    border-style: solid;
+    border-color: #3997bd;
+    margin-top: 90px;
+    margin-bottom: 10px;
+    padding-left: 20px;
+}

@@ -2,13 +2,12 @@
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
-
 <head>
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 
+<link href="css/Register.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
-
 
 </head>
 
@@ -34,7 +33,11 @@
       </div>
       
     </nav>
-    
-</body>
 
+
+<div class= "frontbody">
+¡Regístrate para disfrutar de Tr$ps!
+  </div>
+
+</body>
 </html>

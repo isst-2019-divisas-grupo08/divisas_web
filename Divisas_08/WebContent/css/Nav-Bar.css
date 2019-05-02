@@ -1,0 +1,63 @@
+@charset "ISO-8859-1";
+
+.topnav {
+	top: 0px;
+    background-color: #FFF;
+    position: fixed;
+    overflow: hidden;
+    width: 99%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+  }
+
+.name {
+    color: #3997bd;
+    float: right;
+    padding-left: 15px;
+    
+}
+
+.name:hover {
+    color: rgb(163, 51, 51);
+}
+
+.imgLogo {
+    padding-top: 7px;
+}
+
+.userData {
+    float:right;
+}
+
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    color: #3997bd
+
+  }
+
+  .links {
+    padding-top: 23px;
+    float: center;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    color: rgb(163, 51, 51); 
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color: rgb(170, 51, 51);
+    color: white;
+  }
+
+  .topnav a.active:hover {
+    text-decoration: underline;
+  }
