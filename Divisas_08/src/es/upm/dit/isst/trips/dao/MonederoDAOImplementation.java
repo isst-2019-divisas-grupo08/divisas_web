@@ -29,13 +29,26 @@ public class MonederoDAOImplementation implements MonederoDAO {
 		}finally {
 			session.close();
 		}
-		
 	}
 
 	@Override
-	public int readMonedero(int idCambio, double interes) {
-		// TODO Auto-generated method stub
-		return 0;
+	public Monedero readMonedero(int idMonedero) {
+		
+		Session session = SessionFactoryService.get().openSession();
+		Monedero monedero = null;
+		try {
+			session.beginTransaction();
+			monedero = (Monedero) session.createQuery("select a from Monedero a where a.idMonedero = :idMonedero")
+					.setParameter("idMonedero", idMonedero)
+					.getSingleResult();
+			session.getTransaction().commit();
+			
+		} catch (Exception e) {
+			
+		}finally {
+			session.close();
+		}
+			return monedero;
 	}
 
 	@Override

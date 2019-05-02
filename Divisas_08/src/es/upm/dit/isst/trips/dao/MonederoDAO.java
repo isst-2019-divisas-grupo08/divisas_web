@@ -6,7 +6,7 @@ public interface MonederoDAO {
 	
 	public void createMonedero(Monedero monedero);
 
-	public int readMonedero(int idCambio, double interes);
+	public Monedero readMonedero(int idMonedero);
 
 	public void updateMonedero(Monedero monedero);
 

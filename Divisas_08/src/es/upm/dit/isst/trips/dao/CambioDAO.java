@@ -6,7 +6,7 @@ public interface CambioDAO {
 	
 	public void createCambio(Cambio cambio);
 
-	public int readCambio(int idCambio, double interes);
+	public Cambio readCambio(int idCambio);
 
 	public void updateCambio(Cambio cambio);
 

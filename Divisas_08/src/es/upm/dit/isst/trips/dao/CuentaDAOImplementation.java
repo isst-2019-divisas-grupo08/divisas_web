@@ -31,9 +31,23 @@ public class CuentaDAOImplementation implements CuentaDAO {
 	}
 
 	@Override
-	public int readCuenta(int numeroCuenta) {
-		// TODO Auto-generated method stub
-		return 0;
+	public Cuenta readCuenta(int numeroCuenta) {
+		
+		Session session = SessionFactoryService.get().openSession();
+		Cuenta cuenta = null;
+		try {
+			session.beginTransaction();
+			cuenta = (Cuenta) session.createQuery("select a from Cuenta a where a.numeroCuenta = :numeroCuenta")
+					.setParameter("numeroCuenta", numeroCuenta)
+					.getSingleResult();
+			session.getTransaction().commit();
+			
+		} catch (Exception e) {
+			
+		}finally {
+			session.close();
+		}
+			return cuenta;
 	}
 
 	@Override

@@ -29,11 +29,25 @@ public class ClienteDAOImplementation implements ClienteDAO {
 		}
 		
 	}
-
+	
 	@Override
-	public int readCliente(int id, String nombre, String Apellido) {
-		// TODO Auto-generated method stub
-		return 0;
+	public Cliente readCliente(int id) {
+		
+			Session session = SessionFactoryService.get().openSession();
+			Cliente cliente = null;
+			try {
+				session.beginTransaction();
+				cliente = (Cliente) session.createQuery("select a from Cliente a where a.id = :id")
+						.setParameter("id", id)
+						.getSingleResult();
+				session.getTransaction().commit();
+				
+			} catch (Exception e) {
+				
+			}finally {
+				session.close();
+			}
+				return cliente;
 	}
 
 	@Override

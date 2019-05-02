@@ -4,6 +4,7 @@ import org.hibernate.Session;
 
 import es.upm.dit.isst.trips.model.Cambio;
 
+
 public class CambioDAOImplementation implements CambioDAO {
 	
 	private static CambioDAOImplementation instance;
@@ -31,14 +32,13 @@ public class CambioDAOImplementation implements CambioDAO {
 	}
 
 	@Override
-	public int readCambio(int idCambio, double interes) {
+	public Cambio readCambio(int idCambio) {
 		Session session = SessionFactoryService.get().openSession();
 		Cambio cambio = null;
 		try {
 			session.beginTransaction();
-			cambio = (Cambio) session.createQuery("select a from Cambio a where a.idCambio = :idCambio and a.interes = :interes")
+			cambio = (Cambio) session.createQuery("select a from Cambio a where a.idCambio = :idCambio")
 					.setParameter("idCambio", idCambio)
-					.setParameter("interes", interes)
 					.getSingleResult();
 			session.getTransaction().commit();
 			
@@ -47,9 +47,7 @@ public class CambioDAOImplementation implements CambioDAO {
 		}finally {
 			session.close();
 		}
-		if(cambio!=null)
-			return cambio.getPrioridad();
-		return 0;
+			return cambio;
 	}
 
 	@Override

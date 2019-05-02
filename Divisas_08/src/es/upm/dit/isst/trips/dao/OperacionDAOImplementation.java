@@ -32,9 +32,23 @@ public class OperacionDAOImplementation implements OperacionDAO {
 	}
 
 	@Override
-	public int readOperacion(int idCambio, double interes) {
-		// TODO Auto-generated method stub
-		return 0;
+	public Operacion readOperacion(int idOperacion) {
+		
+		Session session = SessionFactoryService.get().openSession();
+		Operacion operacion = null;
+		try {
+			session.beginTransaction();
+			operacion = (Operacion) session.createQuery("select a from Operacion a where a.idOperacion = :idOperacion")
+					.setParameter("idOperacion", idOperacion)
+					.getSingleResult();
+			session.getTransaction().commit();
+			
+		} catch (Exception e) {
+			
+		}finally {
+			session.close();
+		}
+			return operacion;
 	}
 
 	@Override

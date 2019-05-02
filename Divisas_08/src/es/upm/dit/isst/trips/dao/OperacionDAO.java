@@ -6,7 +6,7 @@ public interface OperacionDAO {
 	
 	public void createOperacion(Operacion operacion);
 
-	public int readOperacion(int idCambio, double interes);
+	public Operacion readOperacion(int idOperacion);
 
 	public void updateOperacion(Operacion operacion);
 

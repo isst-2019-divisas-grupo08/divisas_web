@@ -3,9 +3,10 @@ package es.upm.dit.isst.trips.dao;
 import es.upm.dit.isst.trips.model.Cuenta;
 
 public interface CuentaDAO {
+	
 	public void createCuenta(Cuenta cuenta);
 
-	public int readCuenta(int numeroCuenta);
+	public Cuenta readCuenta(int numeroCuenta);
 
 	public void updateCuenta(Cuenta cuenta);
 
