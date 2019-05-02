@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,8 +39,8 @@
   
     <h3> Nombre: {{ user._name }}</h3>
     <h3>Apellidos: {{ user._surname }}</h3>
-    <h3>Nº Teléfono: {{ user._phoneNumber }}</h3>
-    <h3>Nº Cuenta: {{ user._account.idAccount }}</h3>
+    <h3>NÂº TelÃ©fono: {{ user._phoneNumber }}</h3>
+    <h3>NÂº Cuenta: {{ user._account.idAccount }}</h3>
     <h3>DNI/NIF: {{user._dni}}</h3>
     <h3>Email: {{user._email}}</h3>
     <h3>Pais: {{user._country}}</h3>

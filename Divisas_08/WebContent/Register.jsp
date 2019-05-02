@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,28 +36,28 @@
 
 
 <div class= "frontbody">
-¡Regístrate para disfrutar de Tr$ps!
-  </div>
-  
-  <div class="registerForm">
-    <form action="RegistroServlet">
+	Â¡RegÃ­strate para disfrutar de Tr$ps!
+</div>
 
-<input type="email" name="email" placeholder="Introduzca su email" style="margin-left:25%"/>
-<input type="password" name="password" placeholder="Introduzca su contraseña"/>
+
+<form class="registerForm" action="RegistroServlet">
+
+<input type="email" name="email" placeholder="Introduzca su email">
+<input type="password" name="password" placeholder="Introduzca su contraseÃ±a"/>
  
  <select name="tratamiento">
 <option>Don</option>
-<option>Doña</option>
+<option>DoÃ±a</option>
 <option>Sr</option>
 <option>Sra</option>
 </select>
 
-<input type="text" name="nombre" placeholder="Introduzca su nombre" style="margin-left:25%"/>
+<input type="text" name="nombre" placeholder="Introduzca su nombre"/>
 <input type="text" name="apellido" placeholder="Introduzca sus apellidos"/>
-<input type="text" name="dni" placeholder="Introduzca su DNI/NIF" style="margin-left:25%"/>
-<input type="text" name="pais" placeholder="Introduzca su país"/>
+<input type="text" name="dni" placeholder="Introduzca su DNI/NIF"/>
+<input type="text" name="pais" placeholder="Introduzca su paÃ­s"/>
 
-<input type="text" name="direccion" placeholder="Introduzca su contraseña"/>
+<input type="text" name="direccion" placeholder="Introduzca su contraseÃ±a"/>
  
  <select name="transporte">
 <option>Hombre</option>
@@ -65,7 +65,7 @@
 <option>Otro</option>
 </select>
 
-<input type="number" name="telefono" placeholder="Introduzca su nº de teléfono"/>
+<input type="number" name="telefono" placeholder="Introduzca su nÂº de telÃ©fono"/>
 <input type="text" name="cuenta" placeholder="Introduzca su cuenta"/>
 
 
@@ -73,8 +73,7 @@
 <button type="submit">Registrarse</button>
 
 </form>
-  
-  </div>
+
 
 </body>
 </html>
