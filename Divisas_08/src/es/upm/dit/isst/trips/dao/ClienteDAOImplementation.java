@@ -1,5 +1,7 @@
 package es.upm.dit.isst.trips.dao;
 
+import java.util.*;
+import java.util.Collection;
 import org.hibernate.Session;
 
 import es.upm.dit.isst.trips.model.Cliente;
@@ -80,6 +82,23 @@ public class ClienteDAOImplementation implements ClienteDAO {
 			session.close();
 		}
 		
+	}
+	
+	@SuppressWarnings({ "unchecked", "finally" })
+	@Override
+	public Collection<Cliente> readAll() {
+		Session session = SessionFactoryService.get().openSession();
+		Collection<Cliente> clientes = null;
+		try {
+			session.beginTransaction(); 
+			clientes = session.createQuery( "from Cliente" ).list(); 
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			
+		} finally {
+			session.close();
+			return clientes;
+		}	
 	}
 
 }

@@ -25,28 +25,29 @@ public class Cliente implements Serializable {
 	private Cuenta cuenta;
 
 	// Constructor
-	public Cliente(
-			int id,
-			String email,
-			String password,
-			String nombre,
-			String apellido,
-			String DNI, 
-			String pais,
-			String tratamiento,
-			SEXOS sexo,
-			Date nacimiento)
+	public Cliente ()
+//	public Cliente(
+//			int id,
+//			String email,
+//			String password,
+//			String nombre,
+//			String apellido,
+//			String DNI, 
+//			String pais,
+//			String tratamiento,
+//			SEXOS sexo,
+//			Date nacimiento)
 	{		
-		this.id = id;
-		this.email = email;
-		this.password = password;
-		this.nombre = nombre;
-		this.apellido = apellido;
-		this.DNI = DNI;
-		this.pais = pais;
-		this.tratamiento = tratamiento;
-		this.sexo = sexo;
-		this.nacimiento = nacimiento;
+//		this.id = id;
+//		this.email = email;
+//		this.password = password;
+//		this.nombre = nombre;
+//		this.apellido = apellido;
+//		this.DNI = DNI;
+//		this.pais = pais;
+//		this.tratamiento = tratamiento;
+//		this.sexo = sexo;
+//		this.nacimiento = nacimiento;
 	}
 	
 	// Getters y Setters

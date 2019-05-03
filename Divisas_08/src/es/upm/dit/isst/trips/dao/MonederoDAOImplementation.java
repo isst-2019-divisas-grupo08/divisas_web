@@ -2,6 +2,7 @@ package es.upm.dit.isst.trips.dao;
 
 import org.hibernate.Session;
 
+import java.util.Collection;
 import es.upm.dit.isst.trips.model.Monedero;
 
 public class MonederoDAOImplementation implements MonederoDAO {
@@ -81,6 +82,23 @@ public class MonederoDAOImplementation implements MonederoDAO {
 			session.close();
 		}
 		
+	}
+	
+	@SuppressWarnings({ "unchecked", "finally" })
+	@Override
+	public Collection<Monedero> readAll() {
+		Session session = SessionFactoryService.get().openSession();
+		Collection<Monedero> monederos = null;
+		try {
+			session.beginTransaction(); 
+			monederos = session.createQuery( "from Monedero" ).list(); 
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			
+		} finally {
+			session.close();
+			return monederos;
+		}	
 	}
 
 }
