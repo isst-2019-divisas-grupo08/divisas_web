@@ -1,0 +1,76 @@
+@charset "UTF-8";
+
+::placeholder {
+	color: #BBB;
+	text-align: center;
+}
+
+.selectCurrency {
+	margin-top: 100px;
+	text-align: center;
+}
+
+.obtainCurrency {
+	margin-top: 50px;
+	text-align: center;
+	cursor: auto;
+}
+
+.selectors {
+	margin: 20px;
+}
+
+.selectors select {
+	margin-left: 20px;
+	width: 5%;
+    height: 44px;
+    border-radius: 20px;
+    text-indent: 10px;
+    border: #3997bd solid 2px;
+    cursor: pointer;
+    background: white;
+    outline: none;
+    -webkit-box-shadow: 0 6px 6px -6px #999;
+    -moz-box-shadow: 0 6px 6px -6px #999;
+    box-shadow: 0 6px 6px -6px #999;
+}
+
+.selectors input {	
+	width: 15%;
+    border: #3997bd solid 2px;
+    background: 0 0;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    height: 44px;
+    font-size: 1em;
+    margin: 0;
+    -webkit-box-shadow: 0 6px 6px -6px #999;
+    -moz-box-shadow: 0 6px 6px -6px #999;
+    box-shadow: 0 6px 6px -6px #999;
+}
+
+.Calculator {
+	margin-top: 100px;
+	text-align: center;
+}
+
+body {
+  font-family: sans-serif;
+  
+  margin: 25px auto;
+}
+.divisa {
+  display: grid;
+  width: 40%;                  
+  grid-template-columns: 50% 50%;   
+  margin-bottom: 15px;
+  background: rgb(37, 169, 209); 
+  color: white;
+}
+.nombre, .valor{
+  padding: 5px;
+  font-size: 16px;
+  align-self: center;  
+  text-align: center;  
+}

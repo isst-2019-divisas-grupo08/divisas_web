@@ -18,9 +18,13 @@
 <title>Home | Tr$ps</title>
 
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
+<link href="css/Home.css" rel="stylesheet" type="text/css">
+
 </head>
+
 <body>
-    <div class="topnav">
+
+	<div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
         	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">         
@@ -37,9 +41,59 @@
       <div class="userData">
           <a href="Register.jsp" >REGISTRATE</a>
           <a href="Login.jsp" >INICIA SESION</a>
-      </div>
-      
+      </div> 
     </div>
+    
+    
+    <div class= selectors>
+    
+	    <div class="select">
+	     <input id="selectCurrency" type="number" placeholder="Cambia" onChange="getCambio(this)">
+	     	<select class="selectCurrency" id="selectCurrencyType" onChange="getCambio(this)">
+	  			<option value="selectEUR" selected>EUR</option>
+	  			<option value="selectGBP">GBP</option>
+	  			<option value="selectUSD">USD</option>
+	  	 	</select>
+	    </div>
+	    
+		
+		
+	     <div class="obtain">
+	     <input class="obtainCurrency" id="obtainCurrency" type="number" placeholder="Obtén" readonly>
+	     	<select class="obtainCurrency" id="obtainCurrencyType" onChange="getCambio(this)">
+	  			<option value="obtainEUR">EUR</option>
+	  			<option value="obtainGBP">GBP</option>
+	  			<option value="obtainUSD" selected>USD</option>
+	  	 	</select>
+	    </div>
+ 
+    </div>
+    
+    <div class="Calculator">
+        
+	    <div class="divisa">
+	    <label class="nombre">Euros</label>
+	    <input class="valor" type="number" value="1" data-cambio="1" step="0.25" onChange="valorCambiado(this)"/>
+	  </div>
+	
+	  <div class="divisa">
+	    <label class="nombre">Dólares</label>
+	    <input class="valor" type="number" value="1" id="USD" step="0.25" onChange="valorCambiado(this)"/>
+	  </div>
+	
+	  <div class="divisa">
+	    <label class="nombre">Libras</label>
+	    <input class="valor" type="number" value="1" id="GBP" step="0.25" onChange="valorCambiado(this)"/>
+	  </div>
+	
+	  <div class="divisa">
+	    <label class="nombre">Yenes</label>
+	    <input class="valor" type="number" value="1" id="JPY" onChange="valorCambiado(this)"/> 
+	  </div>
+
+	</div>
+	
+  <script src="scripts.js" ></script>
       
 </body>
 </html>

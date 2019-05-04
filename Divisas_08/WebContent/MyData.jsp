@@ -28,7 +28,7 @@
       </div>
 
       <div class="links">
-        <a href="Login.jsp" >MI CARTERA</a>
+        <a href="Wallet.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
         <a href="Operations.jsp" >OPERACIONES</a>
         <a href="help">AYUDA</a>
