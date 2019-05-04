@@ -56,9 +56,9 @@
 	  			<option value="selectGBP">GBP</option>
 	  			<option value="selectUSD">USD</option>
 	  			<option value="selectJPY">JPY</option>
-	  			<option value="obtainAUD">AUD</option>
-	  			<option value="obtainCAD">CAD</option>
-	  			<option value="obtainCHF">CHF</option>
+	  			<option value="selectAUD">AUD</option>
+	  			<option value="selectCAD">CAD</option>
+	  			<option value="selectCHF">CHF</option>
 	  	 	</select>
 	    </div>
 	    
