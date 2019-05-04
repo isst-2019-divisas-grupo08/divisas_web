@@ -59,26 +59,16 @@ function getCambioEuros() {
 	case "obtainUSD":
 		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.USD).toFixed(2);
 		break;
+	case "obtainJPY":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.JPY).toFixed(2);
+		break;
+		
 	default:
 		break;
 	}
 }
 
-function getCambioDollars() {
-	switch (this.obtainCurrencyType.value) {
-	case "obtainEUR":
-		this.obtainCurrency.value = (this.selectCurrency.value * 1).toFixed(2);
-		break;
-	case "obtainGBP":
-		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.GBP).toFixed(2);
-		break;
-	case "obtainUSD":
-		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.USD).toFixed(2);
-		break;
-	default:
-		break;
-	}
-}
+
 
 
 

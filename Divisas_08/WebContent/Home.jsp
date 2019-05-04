@@ -53,6 +53,7 @@
 	  			<option value="selectEUR" selected>EUR</option>
 	  			<option value="selectGBP">GBP</option>
 	  			<option value="selectUSD">USD</option>
+	  			<option value="selectJPY">JPY</option>
 	  	 	</select>
 	    </div>
 	    
@@ -64,6 +65,7 @@
 	  			<option value="obtainEUR">EUR</option>
 	  			<option value="obtainGBP">GBP</option>
 	  			<option value="obtainUSD" selected>USD</option>
+	  			<option value="obtainJPY">JPY</option>
 	  	 	</select>
 	    </div>
  
