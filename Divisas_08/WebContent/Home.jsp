@@ -81,6 +81,15 @@
 	    
 	</div>
 	
+	<div class="register">
+	
+	<h2>¿Todavía no eres miembro?</h2>
+	<h2>
+		<a href ="Register.jsp">¡Regístrate!</a>
+	</h2>
+	
+	</div>
+	
   <script src="scripts.js" ></script>
       
 </body>

@@ -14,6 +14,34 @@ h1 {
 	cursor: context-menu;
 }
 
+h2 {
+	margin-top: 20px;
+	margin-bottom: 0px;
+	font-family: 'Montserrat', Arial, sans-serif;
+	color: #3386aa;
+	text-align:center;
+	font-size: 24px;
+	cursor: context-menu;
+}
+
+.register {
+	margin: none;
+}
+
+.register a {
+	margin-top: 0px;
+	font-family: 'Montserrat', Arial, sans-serif;
+	color: #3386aa;
+	text-align:center;
+	font-size: 16px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.register a:hover {
+	color: rgb(163, 51, 51);
+}
+
 h1::after {
 	content: '';
     width: 100px;
