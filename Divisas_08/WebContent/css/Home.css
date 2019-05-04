@@ -5,8 +5,29 @@
 	text-align: center;
 }
 
-.selectCurrency {
+h1 {
 	margin-top: 100px;
+	font-family: 'Montserrat', Arial, sans-serif;
+	color: #3386aa;
+	text-align:center;
+	font-size: 24px;
+	cursor: context-menu;
+}
+
+h1::after {
+	content: '';
+    width: 100px;
+    height: 6px;
+    position: absolute;
+    left: 50%;
+    margin-left: -47px;
+    top: 150px;
+    color: #3386aa;
+    border-bottom: #3997bd solid 3px;
+}
+
+.selectCurrency {
+	margin-top: 10px;
 	text-align: center;
 }
 
@@ -17,7 +38,9 @@
 }
 
 .selectors {
-	margin: 20px;
+	margin: 40px;
+	margin-top: 120px;
+	text-align: center;
 }
 
 .selectors select {
@@ -50,27 +73,14 @@
     box-shadow: 0 6px 6px -6px #999;
 }
 
-.Calculator {
-	margin-top: 100px;
-	text-align: center;
-}
-
-body {
-  font-family: sans-serif;
-  
-  margin: 25px auto;
-}
-.divisa {
-  display: grid;
-  width: 40%;                  
-  grid-template-columns: 50% 50%;   
-  margin-bottom: 15px;
-  background: rgb(37, 169, 209); 
-  color: white;
-}
-.nombre, .valor{
-  padding: 5px;
-  font-size: 16px;
-  align-self: center;  
-  text-align: center;  
+.selectors input[type=submit] {
+	margin-top: 35px;
+	background: #3997bd;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    height: 30px;
+    width: 100px;
+    font-size: 16px;
+    text-shadow: none;
+    cursor: pointer;
 }

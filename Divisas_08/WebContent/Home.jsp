@@ -45,7 +45,9 @@
     </div>
     
     
-    <div class= selectors>
+    <div class="selectors">
+    
+    	<h1>¡Empieza a cambiar!</h1>
     
 	    <div class="select">
 	     <input id="selectCurrency" type="number" placeholder="Cambia" onChange="getCambio(this)">
@@ -74,31 +76,9 @@
 	  			<option value="obtainCHF">CHF</option>
 	  	 	</select>
 	    </div>
- 
-    </div>
-    
-    <div class="Calculator">
-        
-	    <div class="divisa">
-	    <label class="nombre">Euros</label>
-	    <input class="valor" type="number" value="1" data-cambio="1" step="0.25" onChange="valorCambiado(this)"/>
-	  </div>
-	
-	  <div class="divisa">
-	    <label class="nombre">Dólares</label>
-	    <input class="valor" type="number" value="1" id="USD" step="0.25" onChange="valorCambiado(this)"/>
-	  </div>
-	
-	  <div class="divisa">
-	    <label class="nombre">Libras</label>
-	    <input class="valor" type="number" value="1" id="GBP" step="0.25" onChange="valorCambiado(this)"/>
-	  </div>
-	
-	  <div class="divisa">
-	    <label class="nombre">Yenes</label>
-	    <input class="valor" type="number" value="1" id="JPY" onChange="valorCambiado(this)"/> 
-	  </div>
-
+	    
+	    <input type="submit" value="Empezar">
+	    
 	</div>
 	
   <script src="scripts.js" ></script>
