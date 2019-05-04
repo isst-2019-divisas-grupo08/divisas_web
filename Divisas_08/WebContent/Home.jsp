@@ -44,50 +44,54 @@
       </div> 
     </div>
     
+    <div class="mainBody">
     
-    <div class="selectors">
-    
-    	<h1>¡Empieza a cambiar!</h1>
-    
-	    <div class="select">
-	     <input id="selectCurrency" type="number" placeholder="Cambia" onChange="getCambio(this)">
-	     	<select class="selectCurrency" id="selectCurrencyType" onChange="getCambio(this)">
-	  			<option value="selectEUR" selected>EUR</option>
-	  			<option value="selectGBP">GBP</option>
-	  			<option value="selectUSD">USD</option>
-	  			<option value="selectJPY">JPY</option>
-	  			<option value="selectAUD">AUD</option>
-	  			<option value="selectCAD">CAD</option>
-	  			<option value="selectCHF">CHF</option>
-	  	 	</select>
-	    </div>
+	    <div class="selectors">
 	    
+	    	<h1>¡Empieza a cambiar!</h1>
+	    
+		    <div class="select">
+		     <input id="selectCurrency" type="number" placeholder="Cambia" onChange="getCambio(this)">
+		     	<select class="selectCurrency" id="selectCurrencyType" onChange="getCambio(this)">
+		  			<option value="selectEUR" selected>EUR</option>
+		  			<option value="selectGBP">GBP</option>
+		  			<option value="selectUSD">USD</option>
+		  			<option value="selectJPY">JPY</option>
+		  			<option value="selectAUD">AUD</option>
+		  			<option value="selectCAD">CAD</option>
+		  			<option value="selectCHF">CHF</option>
+		  	 	</select>
+		    </div>
+		    
+			
+			
+		     <div class="obtain">
+		     <input class="obtainCurrency" id="obtainCurrency" type="number" placeholder="Obtén" readonly>
+		     	<select class="obtainCurrency" id="obtainCurrencyType" onChange="getCambio(this)">
+		  			<option value="obtainEUR">EUR</option>
+		  			<option value="obtainGBP">GBP</option>
+		  			<option value="obtainUSD" selected>USD</option>
+		  			<option value="obtainJPY">JPY</option>
+		  			<option value="obtainAUD">AUD</option>
+		  			<option value="obtainCAD">CAD</option>
+		  			<option value="obtainCHF">CHF</option>
+		  	 	</select>
+		    </div>
+		    
+		    <input type="submit" value="Empezar">
+		    
+		</div>
 		
-		
-	     <div class="obtain">
-	     <input class="obtainCurrency" id="obtainCurrency" type="number" placeholder="Obtén" readonly>
-	     	<select class="obtainCurrency" id="obtainCurrencyType" onChange="getCambio(this)">
-	  			<option value="obtainEUR">EUR</option>
-	  			<option value="obtainGBP">GBP</option>
-	  			<option value="obtainUSD" selected>USD</option>
-	  			<option value="obtainJPY">JPY</option>
-	  			<option value="obtainAUD">AUD</option>
-	  			<option value="obtainCAD">CAD</option>
-	  			<option value="obtainCHF">CHF</option>
-	  	 	</select>
-	    </div>
-	    
-	    <input type="submit" value="Empezar">
-	    
+		<div class="register">
+			<h2>¿Todavía no eres miembro?</h2>
+			<h2>
+				<a href ="Register.jsp">¡Regístrate!</a>
+			</h2>
+		</div>
+	
 	</div>
 	
-	<div class="register">
-	
-	<h2>¿Todavía no eres miembro?</h2>
-	<h2>
-		<a href ="Register.jsp">¡Regístrate!</a>
-	</h2>
-	
+	<div class="cambios">
 	</div>
 	
   <script src="scripts.js" ></script>
