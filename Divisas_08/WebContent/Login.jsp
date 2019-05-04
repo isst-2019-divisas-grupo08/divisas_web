@@ -48,10 +48,19 @@
   Inicia sesión para acceder a tu cuenta
 </div>
 
-<div class= "loginButtons">
-  <button>Iniciar Sesión de Pedro Álvarez</button>
-  <button>Iniciar Sesión de Cristina López</button>
-  <button>Cerrar Sesión de Usuario</button>
+<form class="registerForm" action="LoginServlet">
+
+<div class="user">
+	<input type="email" name="email" placeholder="Email">
 </div>
+
+<div class="pass">
+<input type="password" name="password" placeholder="Contraseña"/>
+</div>
+ 
+
+<input type="submit" value="Entrar">
+
+</form>
 </body>
 </html>
