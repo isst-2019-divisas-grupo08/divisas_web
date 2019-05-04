@@ -1,8 +1,6 @@
 package es.upm.dit.isst.trips.dao;
 
-
 import es.upm.dit.isst.trips.model.Monedero;
-import java.util.Collection;
 
 public interface MonederoDAO {
 	
@@ -14,5 +12,5 @@ public interface MonederoDAO {
 
 	public void deleteMonedero(Monedero monedero);
 	
-	public Collection<Monedero> readAll();
+
 }

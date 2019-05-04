@@ -15,7 +15,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Operaciones | Tr$ps</title>
+<title>Ayuda | Tr$ps</title>
 
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
 </head>

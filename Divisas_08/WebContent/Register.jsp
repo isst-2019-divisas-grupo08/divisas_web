@@ -1,36 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
-<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
-
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Trip$</title>
+
+
+<title>Registro | Tr$ps</title>
+
 <link href="css/Register.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
+
 </head>
+
 <body>
-<header class="animated fadeInDown" id="navbar">
-    <div class="topnav">
+
+    <nav class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
-          <img class="imgLogo" height="45px" width="45px" src="./img/moneda.png">
-          <h1 class="name">Trip$</h1>           
+        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">           
         </a>
       </div>
 
       <div class="links">
-        <a href="Wallet.jsp" >MI CARTERA</a>
+        <a href="Login.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
         <a href="Operations.jsp" >OPERACIONES</a>
-        <a href="Help.jsp">AYUDA</a>
+        <a href="help">AYUDA</a>
       </div>
 
       <div class="userData">
@@ -38,20 +40,32 @@
           <a href="Login.jsp" >INICIA SESION</a>
       </div>
       
-    </div>
-      
-</header>
+    </nav>
+
 
 <div class= "frontbody">
-¡Regístrate para disfrutar de Tr$ps!
+	¡Regístrate para disfrutar de Tr$ps!
 </div>
 
-<div class="registerForm">
-    <form action="RegistroServlet">
 
-<input type="email" name="email" placeholder="Introduzca su email" style="margin-left:25%"/>
-<input type="password" name="password" placeholder="Introduzca su contraseña"/>
- 
+<form class="registerForm" action="RegistroServlet">
+
+<div class="user">
+	<input type="email" name="email" placeholder="Email">
+</div>
+
+<div class="pass">
+<input type="password" name="password" placeholder="Contraseña"/>
+</div>
+
+<div class="pass">
+<input type="password" name="password" placeholder="Confirmar contraseña"/>
+</div>
+
+
+
+<!-- 
+
  <select name="tratamiento">
 <option>Don</option>
 <option>Doña</option>
@@ -59,12 +73,14 @@
 <option>Sra</option>
 </select>
 
-<input type="text" name="nombre" placeholder="Introduzca su nombre" style="margin-left:25%"/>
-<input type="text" name="apellido" placeholder="Introduzca sus apellidos"/>
-<input type="text" name="dni" placeholder="Introduzca su DNI/NIF" style="margin-left:25%"/>
-<input type="text" name="pais" placeholder="Introduzca su país"/>
+<input type="text" name="nombre" placeholder="Nombre"/>
 
-<input type="text" name="direccion" placeholder="Introduzca su contraseña"/>
+<input type="text" name="apellido" placeholder="Apellidos"/>
+
+<input type="text" name="dni" placeholder="DNI/NIF"/>
+
+<input type="text" name="pais" placeholder="País"/>
+
  
  <select name="transporte">
 <option>Hombre</option>
@@ -73,15 +89,14 @@
 </select>
 
 <input type="number" name="telefono" placeholder="Introduzca su nº de teléfono"/>
-<input type="text" name="cuenta" placeholder="Introduzca su cuenta"/>
 
+ -->
+ 
 
-
-<button type="submit">Registrarse</button>
+<input type="submit" value="Registrarse">
 
 </form>
-  
-</div>
+
 
 </body>
 </html>

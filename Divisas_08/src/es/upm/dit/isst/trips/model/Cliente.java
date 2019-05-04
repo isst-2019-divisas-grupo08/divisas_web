@@ -25,8 +25,8 @@ public class Cliente implements Serializable {
 	private Cuenta cuenta;
 
 	// Constructor
-	public Cliente ()
-//	public Cliente(
+	public Cliente()
+//	(
 //			int id,
 //			String email,
 //			String password,
