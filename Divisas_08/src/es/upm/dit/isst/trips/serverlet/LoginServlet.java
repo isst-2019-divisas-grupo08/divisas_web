@@ -1,4 +1,4 @@
-package es.upm.dit.isst.trips.serverlet;
+package es.upm.dit.isst.trips.servlet;
 
 import java.io.IOException;
 
@@ -12,16 +12,23 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.subject.Subject;
 
-import es.upm.dit.isst.trips.dao.ClienteDAO;
-import es.upm.dit.isst.trips.dao.ClienteDAOImplementation;
-
-@WebServlet({ "/LoginServlet", "/" })
+@WebServlet("/LoginServlet")
 class LoginServlet extends HttpServlet{
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ClienteDAO cdao = ClienteDAOImplementation.getInstance();
-		req.getSession().setAttribute( "client_list", cdao.readAll() );
-		getServletContext().getRequestDispatcher( "/MyData.jsp" ).forward( req, resp );
+		Subject currentUser = SecurityUtils.getSubject();
+		if ( !currentUser.isAuthenticated() ) {
+			getServletContext().getRequestDispatcher( "/Login.jsp" ).forward( req, resp );
+		} else {
+			if ( currentUser.hasRole( "admin" ) )
+				resp.sendRedirect( req.getContextPath() + "/AdminServlet" );
+			else if ( currentUser.hasRole( "user" ) )
+				resp.sendRedirect( req.getContextPath() + "/UserServlet?email=" + currentUser.getPrincipal() );
+			else
+				resp.sendRedirect( req.getContextPath() + "/UserServlet?email=" + currentUser.getPrincipal() );
+		}
 	}
 	
 	@Override
@@ -40,9 +47,9 @@ class LoginServlet extends HttpServlet{
 				else
 					resp.sendRedirect( req.getContextPath() + "/UserServlet?email=" + currentUser.getPrincipal() );
 			} catch ( Exception e ) {
-				resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
+				resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 			}
 		} else
-			resp.sendRedirect( req.getContextPath() + "/LoginServlet" );
+			resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 	}
 }

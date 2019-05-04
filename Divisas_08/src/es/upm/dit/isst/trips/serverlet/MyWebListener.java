@@ -1,4 +1,4 @@
-package es.upm.dit.isst.trips.serverlet;
+package es.upm.dit.isst.trips.servlet;
 
 import javax.servlet.annotation.WebListener;
 
