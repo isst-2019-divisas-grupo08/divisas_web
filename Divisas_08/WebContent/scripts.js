@@ -9,7 +9,7 @@ let selectCurrencyType = document.getElementById("selectCurrencyType");
 let obtainCurrency = document.getElementById("obtainCurrency");
 let obtainCurrencyType = document.getElementById("obtainCurrencyType");
 
-let url = 'https://api.exchangeratesapi.io/latest?symbols=USD,GBP,JPY';
+let url = 'https://api.exchangeratesapi.io/latest?symbols=USD,GBP,JPY,EUR';
 fetch(url)
   .then(r => r.json())
   .then(data => {
@@ -20,6 +20,8 @@ fetch(url)
       .dataset.cambio = data.rates.GBP;  
     document.querySelector('#JPY')
       .dataset.cambio = data.rates.JPY;
+    document.querySelector('#EUR')
+      .dataset.cambio = data.rates.EUR;
 
     inputs.forEach(input => {
       input.value = input.dataset.cambio;
@@ -41,6 +43,15 @@ function getCambio() {
 		switch (this.selectCurrencyType.value) {
 			case "selectEUR":
 				this.getCambioEuros();
+				break;
+			case "selectUSD":
+				this.getCambioDolar();
+				break;
+			case "selectGBP":
+				this.getCambioLibra();
+				break;
+			case "selectJPY":
+				this.getCambioYen();
 				break;
 			}
 	} else {
@@ -68,6 +79,65 @@ function getCambioEuros() {
 	}
 }
 
+function getCambioDolar() {
+	switch (this.obtainCurrencyType.value) {
+	case "obtainUSD":
+		this.obtainCurrency.value = (this.selectCurrency.value * 1).toFixed(2);
+		break;
+	case "obtainGBP":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.GBP).toFixed(2);
+		break;
+	case "obtainEUR":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.EUR).toFixed(2);
+		break;
+	case "obtainJPY":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.JPY).toFixed(2);
+		break;
+		
+	default:
+		break;
+	}
+}
+
+function getCambioLibra() {
+	switch (this.obtainCurrencyType.value) {
+	case "obtainGBP":
+		this.obtainCurrency.value = (this.selectCurrency.value * 1).toFixed(2);
+		break;
+	case "obtainEUR":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.EUR).toFixed(2);
+		break;
+	case "obtainUSD":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.USD).toFixed(2);
+		break;
+	case "obtainJPY":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.JPY).toFixed(2);
+		break;
+		
+	default:
+		break;
+	}
+}
+
+function getCambioYen() {
+	switch (this.obtainCurrencyType.value) {
+	case "obtainJPY":
+		this.obtainCurrency.value = (this.selectCurrency.value * 1).toFixed(2);
+		break;
+	case "obtainGBP":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.GBP).toFixed(2);
+		break;
+	case "obtainUSD":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.USD).toFixed(2);
+		break;
+	case "obtainEUR":
+		this.obtainCurrency.value = (this.selectCurrency.value * this.exchangeRates.rates.EUR).toFixed(2);
+		break;
+		
+	default:
+		break;
+	}
+}
 
 
 
