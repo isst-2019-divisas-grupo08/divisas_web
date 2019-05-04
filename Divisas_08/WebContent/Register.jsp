@@ -32,7 +32,7 @@
         <a href="Login.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
         <a href="Operations.jsp" >OPERACIONES</a>
-        <a href="help">AYUDA</a>
+        <a href="Help.jsp">AYUDA</a>
       </div>
 
       <div class="userData">
@@ -48,7 +48,7 @@
 </div>
 
 
-<form class="registerForm" action="RegistroServlet">
+<form class="registerForm" action="RegisterServlet">
 
 <div class="user">
 	<input type="email" name="email" placeholder="Email">
