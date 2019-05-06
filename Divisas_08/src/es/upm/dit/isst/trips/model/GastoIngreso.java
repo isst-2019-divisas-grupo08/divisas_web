@@ -9,13 +9,12 @@ import javax.persistence.Id;
 		// Primary key
 		@Id
 		private int nOperacion;
-			
 		private String confPago;
 		
 		
 		// Constructor	
-		public GastoIngreso() {
-			
+		public GastoIngreso(double saldo) {
+			super(saldo);
 		}
 		
 		// Getters y Setters

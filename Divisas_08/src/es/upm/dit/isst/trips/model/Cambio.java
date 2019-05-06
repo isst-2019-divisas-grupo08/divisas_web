@@ -1,9 +1,11 @@
 package es.upm.dit.isst.trips.model;
 
 import java.io.Serializable;
-
 import javax.persistence.Id;
+import javax.persistence.*;
 
+
+@Entity
 public class Cambio extends Operacion implements Serializable  {
 	
 	public static enum PRIORIDADES {
@@ -19,19 +21,17 @@ public class Cambio extends Operacion implements Serializable  {
 	
 	private PRIORIDADES prioridad;
 	private double interes;
-	private int idMonederoDestino;
+	private Monedero monederoDestino;
+	private double cantidadDivisa;
 	
 	// CONSTRUCTOR
 	public Cambio (
-			int idOperacion,
-			double cantidad,
-			int monederoOrigen,
-			int idCambio,
+			double saldo,
+			Monedero monederoOrigen,
 			PRIORIDADES prioridad)
 	{	
-		super(idOperacion, cantidad, monederoOrigen);
+		super(saldo);
 		
-		this.idCambio = idCambio;
 		this.prioridad = prioridad;
 		
 		switch(prioridad) {
@@ -46,40 +46,70 @@ public class Cambio extends Operacion implements Serializable  {
 			break;
 		}
 	}
-	
-	
-	// Getters y Setters
-	public int getIdCambio() {
-		return this.idCambio;
+
+	public static double getInteresNormal() {
+		return interesNormal;
 	}
-					
+
+	public static void setInteresNormal(double interesNormal) {
+		Cambio.interesNormal = interesNormal;
+	}
+
+	public static double getInteresAlto() {
+		return interesAlto;
+	}
+
+	public static void setInteresAlto(double interesAlto) {
+		Cambio.interesAlto = interesAlto;
+	}
+
+	public static double getInteresMuyAlto() {
+		return interesMuyAlto;
+	}
+
+	public static void setInteresMuyAlto(double interesMuyAlto) {
+		Cambio.interesMuyAlto = interesMuyAlto;
+	}
+
+	public int getIdCambio() {
+		return idCambio;
+	}
+
 	public void setIdCambio(int idCambio) {
 		this.idCambio = idCambio;
 	}
-	
+
 	public PRIORIDADES getPrioridad() {
 		return prioridad;
 	}
-					
+
 	public void setPrioridad(PRIORIDADES prioridad) {
 		this.prioridad = prioridad;
 	}
-	
+
 	public double getInteres() {
 		return interes;
 	}
-					
-	public void setInteres(Double interes) {
+
+	public void setInteres(double interes) {
 		this.interes = interes;
 	}
-	
-	public int getIdMonederoDestino() {
-		return idMonederoDestino;
-	}
-					
-	public void setMonedero2(int idMonederoDestino) {
-		this.idMonederoDestino = idMonederoDestino;
-	}
-	
 
+	public Monedero getMonederoDestino() {
+		return monederoDestino;
+	}
+
+	public void setMonederoDestino(Monedero monederoDestino) {
+		this.monederoDestino = monederoDestino;
+	}
+
+	public double getCantidadDivisa() {
+		return cantidadDivisa;
+	}
+
+	public void setCantidadDivisa(double cantidadDivisa) {
+		this.cantidadDivisa = cantidadDivisa;
+	}
+	
+	
 }

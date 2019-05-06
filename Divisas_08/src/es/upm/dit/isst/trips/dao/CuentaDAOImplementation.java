@@ -1,7 +1,10 @@
 package es.upm.dit.isst.trips.dao;
 
+import java.util.Collection;
+
 import org.hibernate.Session;
 
+import es.upm.dit.isst.trips.model.Cliente;
 import es.upm.dit.isst.trips.model.Cuenta;
 
 public class CuentaDAOImplementation implements CuentaDAO {
@@ -80,6 +83,23 @@ public class CuentaDAOImplementation implements CuentaDAO {
 			session.close();
 		}
 		
+	}
+	
+	@SuppressWarnings({ "unchecked", "finally" })
+	@Override
+	public Collection<Cuenta> readAll() {
+		Session session = SessionFactoryService.get().openSession();
+		Collection<Cuenta> cuentas = null;
+		try {
+			session.beginTransaction(); 
+			cuentas = session.createQuery( "from Cuenta" ).list(); 
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			
+		} finally {
+			session.close();
+			return cuentas;
+		}	
 	}
 
 }

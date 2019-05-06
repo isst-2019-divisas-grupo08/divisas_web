@@ -4,25 +4,29 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.*;
 
-
+@Entity
 public class Cuenta implements Serializable {
 	
 	// Primary key
 		@Id
 		private int numeroCuenta;
-		
+		private int tarjeta;
+		@OneToMany(fetch=FetchType.EAGER) 
 		private Collection<Monedero> monederos;
+		@OneToMany(fetch=FetchType.EAGER) 
 		private Collection<Operacion> historial;
 		
-		private int tarjeta;
+		
 	
 	
-		public Cuenta(int numeroCuenta, int tarjeta) {
+		public Cuenta() {
 			
-			this.numeroCuenta = numeroCuenta;
-			this.tarjeta = tarjeta;
 			
 			this.monederos = new ArrayList<Monedero>();
 			this.historial = new ArrayList<Operacion>();

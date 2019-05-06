@@ -1,5 +1,6 @@
 package es.upm.dit.isst.trips.dao;
 
+import java.util.*;
 import org.hibernate.Session;
 
 import es.upm.dit.isst.trips.model.Cliente;
@@ -31,14 +32,14 @@ public class ClienteDAOImplementation implements ClienteDAO {
 	}
 	
 	@Override
-	public Cliente readCliente(int id) {
+	public Cliente readCliente(String nombre) {
 		
 			Session session = SessionFactoryService.get().openSession();
 			Cliente cliente = null;
 			try {
 				session.beginTransaction();
-				cliente = (Cliente) session.createQuery("select a from Cliente a where a.id = :id")
-						.setParameter("id", id)
+				cliente = (Cliente) session.createQuery("select a from Cliente a where a.nombre = :nombre")
+						.setParameter("nombre", nombre)
 						.getSingleResult();
 				session.getTransaction().commit();
 				
@@ -80,6 +81,23 @@ public class ClienteDAOImplementation implements ClienteDAO {
 			session.close();
 		}
 		
+	}
+	
+	@SuppressWarnings({ "unchecked", "finally" })
+	@Override
+	public Collection<Cliente> readAll() {
+		Session session = SessionFactoryService.get().openSession();
+		Collection<Cliente> clientes = null;
+		try {
+			session.beginTransaction(); 
+			clientes = session.createQuery( "from Cliente" ).list(); 
+			session.getTransaction().commit();
+		} catch (Exception e) {
+			
+		} finally {
+			session.close();
+			return clientes;
+		}	
 	}
 
 }

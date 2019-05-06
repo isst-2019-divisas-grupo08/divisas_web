@@ -3,11 +3,15 @@ package es.upm.dit.isst.trips.model;
 import java.io.Serializable;
 
 import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.*;
 
+@Entity
 public class Monedero implements Serializable {
 	
 	public static enum SYMBOLS {
-			€, $, A$, C$, Fr, £, ¥, 		
+			EUR, USD, AUD, CAD, CHF, GBP, JPY,
+			
 	}
 	
 	public static enum DIVISAS {
@@ -20,15 +24,24 @@ public class Monedero implements Serializable {
 	
 	private SYMBOLS symbol;
 	private DIVISAS divisa;
-	private int cantidad;
+	@OneToOne(fetch=FetchType.EAGER) 
+	private Map<SYMBOLS, Double> cantidad = new HashMap<SYMBOLS, Double>();
+	
 	
 	
 	// CONSTRUCTOR	
-	public Monedero(int id, DIVISAS divisa) {
+	public Monedero(DIVISAS divisa) {
 		
-		this.id = id;
+		
 		this.divisa = divisa;
-		this.cantidad = 0;
+		this.cantidad.put(SYMBOLS.EUR, 0.0);
+		this.cantidad.put(SYMBOLS.GBP, 0.0);
+		this.cantidad.put(SYMBOLS.USD, 0.0);
+		this.cantidad.put(SYMBOLS.JPY, 0.0);
+		this.cantidad.put(SYMBOLS.AUD, 0.0);
+		this.cantidad.put(SYMBOLS.CHF, 0.0);
+		this.cantidad.put(SYMBOLS.CAD, 0.0);
+		
 		
 	}
 	
@@ -56,15 +69,33 @@ public class Monedero implements Serializable {
 	public void setSimbolo(SYMBOLS symbol) {
 		this.symbol = symbol;
 	}
-	
-	public int getCantidad() {
-		return this.cantidad;
+
+	public SYMBOLS getSymbol() {
+		return symbol;
 	}
-						
-	public void setCantidad(int cantidad) {
+
+	public void setSymbol(SYMBOLS symbol) {
+		this.symbol = symbol;
+	}
+
+	public Map<SYMBOLS, Double> getCantidad() {
+		return cantidad;
+	}
+
+	public void setCantidad(Map<SYMBOLS, Double> cantidad) {
 		this.cantidad = cantidad;
 	}
 	
+	public void addCantidad(SYMBOLS divisa, Double saldo) {
+		Double oldSaldo = this.cantidad.get(divisa);
+		cantidad.put(divisa, (oldSaldo+saldo));
+		
+	}
 	
+	public void lessCantidad(SYMBOLS divisa, Double saldo) {
+		Double oldSaldo = this.cantidad.get(divisa);
+		cantidad.put(divisa, (oldSaldo-saldo));
+		
+	}
 
 }
