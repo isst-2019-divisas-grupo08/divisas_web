@@ -44,30 +44,24 @@
 
 
 
-<form class="registerForm" action="RegistroServlet">
+	<form class="registerForm" action="RegistroServlet">
+	
+		<div class="user">
+			<input type="email" name="email" placeholder="Email">
+		</div>
+		
+		<div class="pass">
+		<input type="password" name="password" placeholder="Contraseña"/>
+		</div>
+		
+		<div class="pass">
+		<input type="password" name="password" placeholder="Confirmar contraseña"/>
+		</div>
 
-<div class="user">
-	<input type="email" name="email" placeholder="Email">
-</div>
-
-<div class="pass">
-<input type="password" name="password" placeholder="Contraseña"/>
-</div>
-
-<div class="pass">
-<input type="password" name="password" placeholder="Confirmar contraseña"/>
-</div>
-
-
-
-
- 
-
-<input type="submit" value="Continuar">
-
-</form>
-
->>>>>>> master
+		<input type="submit" value="Continuar">
+	
+	</form>
 
 </body>
+
 </html>
