@@ -1,10 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Mis Datos</title>
+
+<meta charset="UTF-8">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport"
+  content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>Mis Datos | Tr$ps</title>
 
 <link href="css/MyData.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
@@ -21,9 +28,9 @@
       </div>
 
       <div class="links">
-        <a href="Login.jsp" >MI CARTERA</a>
+        <a href="Wallet.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
-        <a href="operations" >OPERACIONES</a>
+        <a href="Operations.jsp" >OPERACIONES</a>
         <a href="help">AYUDA</a>
       </div>
 
@@ -39,8 +46,8 @@
   
     <h3> Nombre: {{ user._name }}</h3>
     <h3>Apellidos: {{ user._surname }}</h3>
-    <h3>Nº Teléfono: {{ user._phoneNumber }}</h3>
-    <h3>Nº Cuenta: {{ user._account.idAccount }}</h3>
+    <h3>NÂº TelÃ©fono: {{ user._phoneNumber }}</h3>
+    <h3>NÂº Cuenta: {{ user._account.idAccount }}</h3>
     <h3>DNI/NIF: {{user._dni}}</h3>
     <h3>Email: {{user._email}}</h3>
     <h3>Pais: {{user._country}}</h3>

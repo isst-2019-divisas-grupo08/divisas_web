@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,20 +15,15 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
+<title>Ayuda | Tr$ps</title>
 
-<title>Registro | Tr$ps</title>
-
-<link href="css/Register.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
-
 </head>
-
 <body>
-
-    <nav class="topnav">
+    <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
-        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">           
+        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">         
         </a>
       </div>
 
@@ -40,34 +39,7 @@
           <a href="Login.jsp" >INICIA SESION</a>
       </div>
       
-    </nav>
-
-
-
-<form class="registerForm" action="RegistroServlet">
-
-<div class="user">
-	<input type="email" name="email" placeholder="Email">
-</div>
-
-<div class="pass">
-<input type="password" name="password" placeholder="Contraseña"/>
-</div>
-
-<div class="pass">
-<input type="password" name="password" placeholder="Confirmar contraseña"/>
-</div>
-
-
-
-
- 
-
-<input type="submit" value="Continuar">
-
-</form>
-
->>>>>>> master
-
+    </div>
+      
 </body>
 </html>

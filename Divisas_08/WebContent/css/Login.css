@@ -1,7 +1,8 @@
-@charset "ISO-8859-1";
+@charset "UTF-8";
 
 .frontbody {
     margin: 90px auto;
+    margin-bottom: 40px;
     height: 298px;
     background: #3997bd;
     color: #fff;
@@ -13,27 +14,69 @@
     transition: all 1s ease;
 }
 
+::placeholder {
+	color: #DDD;
+	text-align: center;
+}
+
+:focus::-webkit-input-placeholder {
+color: white;
+}
+
 .frontbody:hover {
     background: rgb(163, 51, 51);
 }
 
-.loginButtons {
-    text-align: center;
+.loginForm {
+	text-align: center;
+	
 }
 
-.loginButtons button {
-    background: #3997bd;
+.loginForm input {
+	width: 30%;
+	border: 0;
+    border-bottom: #cddee1 solid 3px;
+    background: 0 0;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    height: 44px;
+    font-size: 1em;
+    margin: 0;
+}
+
+.loginForm input:focus {
+	outline: none;
+    border-bottom: #3997bd solid 3px;
+    background: 0 0;
+    text-align: center;
+    padding: 0;
+    height: 44px;
+    font-size: 16px;
+    margin: 0;
+}
+
+.loginForm input[type=submit] {
+	margin-top: 20px;
+	background: #3997bd;
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
     height: 30px;
-    width: fit-content;
+    width: 100px;
     margin: 20px;
     font-size: 16px;
     text-shadow: none;
     cursor: pointer;
-
 }
 
-.loginButtons button:hover {
-    background: rgb(163, 51, 51);
+.email {
+	display: flex;
+	justify-content: center;
+	
+}
+
+.pass {
+	display: flex;
+	justify-content: center;
+	
 }

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-  pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>
 <%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -8,16 +8,14 @@
 <html>
 <head>
 
-<meta charset="ISO-8859-1">
-<title>Iniciar Sesiónn</title>
-
-
+<meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport"
   content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="">
 <meta name="author" content="">
-<title>Tr$ps</title>
+
+<title>Iniciar Sesión | Tr$ps</title>
 
 <link href="css/Login.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
@@ -46,14 +44,53 @@
     </div>
       
 
-<div class= "frontbody">
-  Inicia sesión para acceder a tu cuenta
+	<div class= "frontbody">
+	  Inicia sesión para acceder a tu cuenta
+	</div>
+	
+	<form class="loginForm" action="loginServlet">
+
+<div class="user">
+	<input type="email" name="email" placeholder="Email">
 </div>
 
-<div class= "loginButtons">
-  <button>Iniciar Sesión de Pedro Álvarez</button>
-  <button>Iniciar Sesión de Cristina López</button>
-  <button>Cerrar Sesión de Usuario</button>
+<div class="pass">
+<input type="password" name="password" placeholder="Contraseña"/>
 </div>
+
+
+<!-- 
+
+ <select name="tratamiento">
+<option>Don</option>
+<option>Doña</option>
+<option>Sr</option>
+<option>Sra</option>
+</select>
+
+<input type="text" name="nombre" placeholder="Nombre"/>
+
+<input type="text" name="apellido" placeholder="Apellidos"/>
+
+<input type="text" name="dni" placeholder="DNI/NIF"/>
+
+<input type="text" name="pais" placeholder="País"/>
+
+ 
+ <select name="transporte">
+<option>Hombre</option>
+<option>Mujer</option>
+<option>Otro</option>
+</select>
+
+<input type="number" name="telefono" placeholder="Introduzca su nº de teléfono"/>
+
+ -->
+ 
+
+<input type="submit" value="Registrarse">
+
+</form>
+
 </body>
 </html>
