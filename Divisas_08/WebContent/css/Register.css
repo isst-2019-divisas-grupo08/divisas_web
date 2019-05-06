@@ -1,18 +1,5 @@
 @charset "UTF-8";
 
-.frontbody {
-    margin: 90px auto;
-    margin-bottom: 40px;
-    height: 298px;
-    background: #3997bd;
-    color: #fff;
-    font-family: Lato;
-    font-weight: 900;
-    font-size: 3em;
-    text-align: center;
-    line-height: 298px;
-    transition: all 1s ease;
-}
 
 ::placeholder {
 	color: #BBB;
@@ -28,12 +15,13 @@ color: white;
 }
 
 .registerForm {
+	margin-top: 100px;
 	text-align: center;
 	
 }
 
 .registerForm input {
-	width: 30%;
+	width: 20%;
 	border: 0;
     border-bottom: #cddee1 solid 3px;
     background: 0 0;
@@ -42,7 +30,6 @@ color: white;
     padding: 0;
     height: 44px;
     font-size: 1em;
-    margin: 0;
 }
 
 .registerForm input:focus {

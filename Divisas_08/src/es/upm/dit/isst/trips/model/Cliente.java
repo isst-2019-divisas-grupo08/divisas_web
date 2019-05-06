@@ -11,7 +11,7 @@ public class Cliente implements Serializable {
 	}
 	
 	public static enum TRATAMIENTOS {
-		Don, Doña, Sr, Sra
+		Don, DoÃ±a, Sr, Sra
 	}
 	
 	// Primary key

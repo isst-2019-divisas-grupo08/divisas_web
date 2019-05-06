@@ -9,7 +9,7 @@ const exchangesEUR = {
 		CHF: 1.14
 }
 
-const exchangesUSD ={
+const exchangesUSD = {
 		USD: 1.0,
 		EUR: 0.89,
 		GBP: 0.76,
@@ -20,7 +20,7 @@ const exchangesUSD ={
 		}
 
 
-const exchangesJPY ={
+const exchangesJPY = {
 		JPY: 1.0,
 		EUR: 0.0080,
 		USD: 0.0090,
@@ -31,7 +31,7 @@ const exchangesJPY ={
 		}
 
 
-const exchangesGBP ={
+const exchangesGBP = {
 		GBP: 1.0,
 		EUR: 1.17,
 		USD: 1.32,
