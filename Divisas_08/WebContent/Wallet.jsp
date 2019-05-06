@@ -20,7 +20,7 @@
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<shiro:user>
+	<shiro:hasRole name="cliente">
     <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
@@ -41,6 +41,6 @@
       </div>
       
     </div>
-    </shiro:user>  
+    </shiro:hasRole> 
 </body>
 </html>

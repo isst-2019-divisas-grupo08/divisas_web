@@ -30,10 +30,7 @@
       </div>
 
       <div class="links">
-        <a href="Wallet.jsp" >MI CARTERA</a>
-        <a href="MyData.jsp" >MIS DATOS</a>
-        <a href="Operations.jsp" >OPERACIONES</a>
-        <a href="Help.jsp">AYUDA</a>
+        <a href="Home.jsp" >HOME</a>
       </div>
 
       <div class="userData">

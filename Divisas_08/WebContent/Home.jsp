@@ -69,9 +69,9 @@
 		  			<option value="obtainCHF">CHF</option>
 		  	 	</select>
 		    </div>
-		    
+		    <form method="post" action=LoginServlet>
 		    <input type="submit" value="Empezar">
-		    
+			</form>
 		</div>
 		
 		<div class="register">

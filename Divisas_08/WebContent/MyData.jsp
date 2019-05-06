@@ -23,7 +23,7 @@
 </head>
 
 <body>
-	<shiro:user>
+	<shiro:hasRole name="cliente">
     <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
@@ -85,6 +85,6 @@
     
  
 </div>
-</shiro:user>
+</shiro:hasRole>
 </body>
 </html>
