@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -19,7 +23,7 @@
 </head>
 
 <body>
-
+	<shiro:user>
     <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
@@ -31,7 +35,7 @@
         <a href="Wallet.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
         <a href="Operations.jsp" >OPERACIONES</a>
-        <a href="help">AYUDA</a>
+        <a href="Help.jsp">AYUDA</a>
       </div>
 
       <div class="userData">
@@ -81,6 +85,6 @@
     
  
 </div>
-
+</shiro:user>
 </body>
 </html>

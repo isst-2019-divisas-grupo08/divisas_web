@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +33,7 @@
       </div>
 
       <div class="links">
-        <a href="Wallet.jsp" >MI CARTERA</a>
+        <a href="Login.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
         <a href="Operations.jsp" >OPERACIONES</a>
         <a href="Help.jsp">AYUDA</a>
@@ -48,7 +52,7 @@
 </div>
 
 
-<form class="registerForm" action="RegistroServlet">
+<form class="registerForm" method="post" action="RegisterServlet">
 
 <div class="user">
 	<input type="email" name="email" placeholder="Email">
@@ -93,7 +97,7 @@
  -->
  
 
-<input type="submit" value="Continuar">
+<input type="submit" value="Registrarse">
 
 </form>
 
