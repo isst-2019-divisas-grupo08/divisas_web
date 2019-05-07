@@ -41,7 +41,7 @@
       </div>
 
       <div class="userData">
-      <form class="registerForm" method="post" action="LogoutServlet">
+      <form class="registerForm" method="get" action="LogoutServlet">
           <input type="submit" value="Salir">
       </form>
       </div> 

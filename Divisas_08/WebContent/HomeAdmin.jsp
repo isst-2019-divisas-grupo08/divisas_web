@@ -39,8 +39,9 @@
       </div>
 
       <div class="userData">
-          <a href="Register.jsp" >REGISTRATE</a>
-          <a href="Login.jsp" >INICIA SESION</a>
+      <form class="registerForm" method="get" action="LogoutServlet">
+          <input type="submit" value="Salir">
+      </form>
       </div> 
     </div>
     
