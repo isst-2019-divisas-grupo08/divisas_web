@@ -24,25 +24,15 @@ public class Monedero implements Serializable {
 	
 	private SYMBOLS symbol;
 	private DIVISAS divisa;
-	@OneToOne(fetch=FetchType.EAGER) 
-	private Map<SYMBOLS, Double> cantidad = new HashMap<SYMBOLS, Double>();
 	
+    @ManyToOne
+    @JoinColumn(name="cuenta_id", nullable=false)
+    private Cuenta cuenta;
 	
 	
 	// CONSTRUCTOR	
 	public Monedero(DIVISAS divisa) {
-		
-		
 		this.divisa = divisa;
-		this.cantidad.put(SYMBOLS.EUR, 0.0);
-		this.cantidad.put(SYMBOLS.GBP, 0.0);
-		this.cantidad.put(SYMBOLS.USD, 0.0);
-		this.cantidad.put(SYMBOLS.JPY, 0.0);
-		this.cantidad.put(SYMBOLS.AUD, 0.0);
-		this.cantidad.put(SYMBOLS.CHF, 0.0);
-		this.cantidad.put(SYMBOLS.CAD, 0.0);
-		
-		
 	}
 	
 	// Getters y Setters
@@ -77,25 +67,4 @@ public class Monedero implements Serializable {
 	public void setSymbol(SYMBOLS symbol) {
 		this.symbol = symbol;
 	}
-
-	public Map<SYMBOLS, Double> getCantidad() {
-		return cantidad;
-	}
-
-	public void setCantidad(Map<SYMBOLS, Double> cantidad) {
-		this.cantidad = cantidad;
-	}
-	
-	public void addCantidad(SYMBOLS divisa, Double saldo) {
-		Double oldSaldo = this.cantidad.get(divisa);
-		cantidad.put(divisa, (oldSaldo+saldo));
-		
-	}
-	
-	public void lessCantidad(SYMBOLS divisa, Double saldo) {
-		Double oldSaldo = this.cantidad.get(divisa);
-		cantidad.put(divisa, (oldSaldo-saldo));
-		
-	}
-
 }

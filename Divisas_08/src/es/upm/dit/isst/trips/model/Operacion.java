@@ -5,8 +5,9 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
-import javax.persistence.Id;
-@Entity
+
+
+@MappedSuperclass
 public class Operacion implements Serializable {
 	
 	public static enum estadoOperacion {
@@ -18,14 +19,14 @@ public class Operacion implements Serializable {
 	}
 	// Primary key
 		@Id
-		private int idOperacion;
+		protected int idOperacion;
 		
-		private double saldo;
-		private double cantidadDivisa;
+	    protected double saldo;
+	    protected double cantidadDivisa;
 		protected Monedero monederoOrigen;	
-		private estadoOperacion estado;
-		private Date fechaOperacion;
-		private Tipo tipoDivisa;
+		protected estadoOperacion estado;
+		protected Date fechaOperacion;
+		protected Tipo tipoDivisa;
 		
 		
 		public Operacion(double saldo) {

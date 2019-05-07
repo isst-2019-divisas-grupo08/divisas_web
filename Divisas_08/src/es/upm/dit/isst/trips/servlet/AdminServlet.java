@@ -13,7 +13,7 @@ import es.upm.dit.isst.trips.model.Cliente;
 
 
 
-@WebServlet({ "/AdminServlet" })
+@WebServlet("/AdminServlet")
 public class AdminServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

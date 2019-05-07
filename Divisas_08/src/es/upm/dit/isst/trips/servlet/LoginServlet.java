@@ -46,10 +46,11 @@ public class LoginServlet extends HttpServlet {
 					getServletContext().getRequestDispatcher( "/Login.jsp" ).forward( req,resp );
 				}
 			} catch ( Exception e ) {
-				System.out.println( "armaggedon" );
+				System.out.println( "No loggeado" );
 				resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 			}
 		} else
+			System.out.println( "Usuario no loggeado" );
 			resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 	}
 }

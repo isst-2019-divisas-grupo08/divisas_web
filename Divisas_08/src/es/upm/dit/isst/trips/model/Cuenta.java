@@ -2,12 +2,16 @@ package es.upm.dit.isst.trips.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
-import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.Where;
+
 import javax.persistence.*;
 
 @Entity
@@ -17,22 +21,24 @@ public class Cuenta implements Serializable {
 		@Id
 		private int numeroCuenta;
 		private int tarjeta;
-		@OneToMany(fetch=FetchType.EAGER) 
-		private Collection<Monedero> monederos;
-		@OneToMany(fetch=FetchType.EAGER) 
-		private Collection<Operacion> historial;
 		
+		@OneToMany(fetch=FetchType.EAGER,mappedBy="cuenta")
+		private Set<Monedero> monederos = new HashSet<>();
+
+
+		@OneToMany(fetch=FetchType.EAGER,mappedBy="cuenta")
+		private Set<GastoIngreso> hitorialGastosIngresos = new HashSet<>();
+		@OneToMany(fetch=FetchType.EAGER,mappedBy="cuenta")
+		private Set<Cambio> historialCambios = new HashSet<>();
 		
-	
-	
+		@ManyToMany(mappedBy = "cuentas")
+		private Set<Cliente> clientes  = new HashSet<>();
+
+		
 		public Cuenta() {
 			
-			
-			this.monederos = new ArrayList<Monedero>();
-			this.historial = new ArrayList<Operacion>();
-		
 		}
-		
+
 		// Getters y Setters
 		public int getNumeroCuenta() {
 			return this.numeroCuenta;
@@ -40,22 +46,6 @@ public class Cuenta implements Serializable {
 		
 		public void setNumeroCuenta(int numeroCuenta) {
 			this.numeroCuenta = numeroCuenta;
-		}
-		
-		public Collection<Monedero> getMonederos() {
-			return this.monederos;
-		}
-		
-		public void setEmail(Collection<Monedero> monederos) {
-			this.monederos = monederos;
-		}
-		
-		public Collection<Operacion> getHistorialOperaciones() {
-			return this.historial;
-		}
-		
-		public void setHistorialOperaciones(Collection<Operacion> historial) {
-			this.historial = historial;
 		}
 		
 		public int getTarjeta() {
@@ -66,10 +56,40 @@ public class Cuenta implements Serializable {
 			this.tarjeta = tarjeta;
 		}
 		
-		// Funciones de Cuenta
 		
-		public void cleanMonederos() {
-			this.monederos.clear();
+		public Set<Monedero> getMonederos() {
+			return monederos;
 		}
+
+		public void setMonederos(Set<Monedero> monederos) {
+			this.monederos = monederos;
+		}
+
+		public Set<GastoIngreso> getHitorialGastosIngresos() {
+			return hitorialGastosIngresos;
+		}
+
+		public void setHitorialGastosIngresos(Set<GastoIngreso> hitorialGastosIngresos) {
+			this.hitorialGastosIngresos = hitorialGastosIngresos;
+		}
+
+		public Set<Cambio> getHistorialCambios() {
+			return historialCambios;
+		}
+
+		public void setHistorialCambios(Set<Cambio> historialCambios) {
+			this.historialCambios = historialCambios;
+		}
+
+		public Set<Cliente> getClientes() {
+			return clientes;
+		}
+
+		public void setClientes(Set<Cliente> clientes) {
+			this.clientes = clientes;
+		}
+		
+		
+		// Funciones de Cuenta
 
 }

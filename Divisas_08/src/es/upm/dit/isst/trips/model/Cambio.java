@@ -1,7 +1,7 @@
 package es.upm.dit.isst.trips.model;
 
 import java.io.Serializable;
-import javax.persistence.Id;
+
 import javax.persistence.*;
 
 
@@ -18,11 +18,14 @@ public class Cambio extends Operacion implements Serializable  {
 	
 	@Id
 	private int idCambio;
-	
 	private PRIORIDADES prioridad;
 	private double interes;
 	private Monedero monederoDestino;
 	private double cantidadDivisa;
+	
+    @ManyToOne
+    @JoinColumn(name="cuenta_id", nullable=false)
+    private Cuenta cuenta;
 	
 	// CONSTRUCTOR
 	public Cambio (

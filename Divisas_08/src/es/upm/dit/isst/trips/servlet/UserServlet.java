@@ -13,14 +13,14 @@ import es.upm.dit.isst.trips.model.Cliente;
 
 
 
-@WebServlet({ "/AdminServlet" })
+@WebServlet({ "/UserServlet" })
 public class UserServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ClienteDAO cdao = ClienteDAOImplementation.getInstance();
-		Collection<Cliente> clientes = cdao.readAll();
-		req.setAttribute("cliente_list", clientes);
-		getServletContext().getRequestDispatcher( "/Admin.jsp" ).forward( req, resp );
+		//ClienteDAO cdao = ClienteDAOImplementation.getInstance();
+		//Collection<Cliente> clientes = cdao.readAll();
+		//req.setAttribute("cliente_list", clientes);
+		getServletContext().getRequestDispatcher( "/HomeLogin.jsp" ).forward( req,resp );
 	}
 
 }

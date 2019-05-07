@@ -2,6 +2,8 @@ package es.upm.dit.isst.trips.model;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -16,7 +18,7 @@ import javax.persistence.*;
 @Entity
 public class Cliente implements Serializable {
 	@Id
-	private int id;
+	private int clienteId;
 	private String email;
 	private String password;
 	private String nombre;
@@ -28,25 +30,19 @@ public class Cliente implements Serializable {
 	private int telefono;
 	private String sexo;
 	private Date nacimiento;
+
+	@ManyToMany(fetch=FetchType.EAGER)
+    @JoinTable(
+            name = "Cliente_Cuentas", 
+            joinColumns = { @JoinColumn(name = "cliente_id") }, 
+            inverseJoinColumns = { @JoinColumn(name="cuenta_id", nullable=false) }
+    )
+	private Set<Cuenta> cuentas = new HashSet<>();
 	
-	@ManyToMany(fetch=FetchType.EAGER) 
-	private Collection<Long> cuentas;
-	
-	@ManyToMany(fetch=FetchType.EAGER) 
-	private Collection<String> operaciones;
 	public Cliente() {
 		super();
-
-		this.cuentas = new ArrayList<Long>();
-		this.operaciones = new ArrayList<String>();
-	}
-	public int getId() {
-		return id;
 	}
 
-	public void setId(int id) {
-		this.id = id;
-	}
 
 	public String getEmail() {
 		return email;
@@ -136,21 +132,26 @@ public class Cliente implements Serializable {
 		this.nacimiento = nacimiento;
 	}
 
-	public Collection<Long> getCuentas() {
+
+	public long getClientId() {
+		return clienteId;
+	}
+
+
+	public void setClientId(int clientId) {
+		this.clienteId = clientId;
+	}
+
+
+	public Set<Cuenta> getCuentas() {
 		return cuentas;
 	}
 
-	public void setCuentas(Collection<Long> cuentas) {
+
+	public void setCuentas(Set<Cuenta> cuentas) {
 		this.cuentas = cuentas;
 	}
 
-	public Collection<String> getOperaciones() {
-		return operaciones;
-	}
 
-	public void setOperaciones(Collection<String> operaciones) {
-		this.operaciones = operaciones;
-	}
-	
 	
 }
