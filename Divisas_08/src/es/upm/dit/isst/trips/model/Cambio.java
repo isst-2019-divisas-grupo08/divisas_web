@@ -6,41 +6,73 @@ import javax.persistence.*;
 
 
 @Entity
-public class Cambio implements Serializable  {
+public class Cambio extends Operacion implements Serializable  {
 	
-	/*public static enum PRIORIDADES {
+	public static enum PRIORIDADES {
 		NORMAL, ALTA, MUY_ALTA
 	}
 	
 	public static double interesNormal = 0.01;
 	public static double interesAlto = 0.02;
-	public static double interesMuyAlto = 0.03; */
+	public static double interesMuyAlto = 0.03;
 	
 	@Id
 	private int idCambio;
-	
-	private String prioridad;
+	private PRIORIDADES prioridad;
 	private double interes;
+	private Monedero monederoDestino;
+	private double cantidadDivisa;
 	
-	@OneToOne(fetch=FetchType.EAGER)
-	private Monedero monedero2;
-	
-	private double cantidad1;
-	private double cantidad2;
-	
-	private String divisa1;
-	private String divisa2;
-	
+    @ManyToOne
+    @JoinColumn(name="cuenta_id", nullable=false)
+    private Cuenta cuenta;
 	
 	// CONSTRUCTOR
-	public Cambio(Operacion operacion) {
+	public Cambio (
+			double saldo,
+			Monedero monederoOrigen,
+			PRIORIDADES prioridad)
+	{	
+		super(saldo);
 		
-		this.cantidad1 = operacion.cantidad1;
-		this.divisa1 = operacion.monedero1.getDivisa();
-		this.divisa2 = monedero2.getDivisa();
+		this.prioridad = prioridad;
 		
+		switch(prioridad) {
+		case NORMAL:
+			this.interes = interesNormal;
+			break;
+		case ALTA:
+			this.interes = interesAlto;
+			break;
+		case MUY_ALTA:
+			this.interes = interesMuyAlto;
+			break;
+		}
 	}
 
+	public static double getInteresNormal() {
+		return interesNormal;
+	}
+
+	public static void setInteresNormal(double interesNormal) {
+		Cambio.interesNormal = interesNormal;
+	}
+
+	public static double getInteresAlto() {
+		return interesAlto;
+	}
+
+	public static void setInteresAlto(double interesAlto) {
+		Cambio.interesAlto = interesAlto;
+	}
+
+	public static double getInteresMuyAlto() {
+		return interesMuyAlto;
+	}
+
+	public static void setInteresMuyAlto(double interesMuyAlto) {
+		Cambio.interesMuyAlto = interesMuyAlto;
+	}
 
 	public int getIdCambio() {
 		return idCambio;
@@ -50,11 +82,11 @@ public class Cambio implements Serializable  {
 		this.idCambio = idCambio;
 	}
 
-	public String getPrioridad() {
+	public PRIORIDADES getPrioridad() {
 		return prioridad;
 	}
 
-	public void setPrioridad(String prioridad) {
+	public void setPrioridad(PRIORIDADES prioridad) {
 		this.prioridad = prioridad;
 	}
 
@@ -66,44 +98,20 @@ public class Cambio implements Serializable  {
 		this.interes = interes;
 	}
 
-	public Monedero getMonedero2() {
-		return monedero2;
+	public Monedero getMonederoDestino() {
+		return monederoDestino;
 	}
 
-	public void setMonedero2(Monedero monedero2) {
-		this.monedero2 = monedero2;
+	public void setMonederoDestino(Monedero monederoDestino) {
+		this.monederoDestino = monederoDestino;
 	}
 
-	public double getCantidad1() {
-		return cantidad1;
+	public double getCantidadDivisa() {
+		return cantidadDivisa;
 	}
 
-	public void setCantidad1(double cantidad1) {
-		this.cantidad1 = cantidad1;
-	}
-	
-	public double getCantidad2() {
-		return cantidad2;
-	}
-
-	public void setCantidad2(double cantidad2) {
-		this.cantidad2 = cantidad2;
-	}
-	
-	public String getDivisa1() {
-		return divisa1;
-	}
-
-	public void setDivisa1(String divisa1) {
-		this.divisa1 = divisa1;
-	}
-	
-	public String getDivisa2() {
-		return divisa2;
-	}
-
-	public void setDivisa2(String divisa2) {
-		this.divisa2 = divisa2;
+	public void setCantidadDivisa(double cantidadDivisa) {
+		this.cantidadDivisa = cantidadDivisa;
 	}
 	
 	

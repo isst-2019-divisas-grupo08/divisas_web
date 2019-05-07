@@ -39,10 +39,8 @@
       </div>
 
       <div class="userData">
-      <form class="registerForm" method="get" action="LogoutServlet">
-          <input type="submit" value="Salir">
-      </form>
-      </div> 
+      <a href="LogoutServlet">Salir</a>
+      </div>
     </div>
     
    </shiro:hasRole>

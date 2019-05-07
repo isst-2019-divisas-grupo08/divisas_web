@@ -13,7 +13,10 @@ import org.apache.shiro.crypto.hash.Sha256Hash;
 
 import es.upm.dit.isst.trips.dao.ClienteDAO;
 import es.upm.dit.isst.trips.dao.ClienteDAOImplementation;
+import es.upm.dit.isst.trips.dao.CuentaDAO;
+import es.upm.dit.isst.trips.dao.CuentaDAOImplementation;
 import es.upm.dit.isst.trips.model.Cliente;
+import es.upm.dit.isst.trips.model.Cuenta;
 
 @WebServlet("/RegisterServlet")
 public class RegisterServlet extends HttpServlet {
@@ -28,9 +31,29 @@ public class RegisterServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String password = req.getParameter( "password" );
 		String email = req.getParameter( "email" );
+		String nombre = req.getParameter( "nombre" );
+		String apellido = req.getParameter( "apellido" );
+		String DNI = req.getParameter( "DNI" );
+		String pais = req.getParameter( "pais" );
+		String direccion = req.getParameter( "direccion" );
+		
 		Cliente cliente = new Cliente();
 		cliente.setEmail( email );
 		cliente.setPassword( new Sha256Hash( password ).toString() );
+		cliente.setRole("cliente");
+		cliente.setNombre(nombre);
+		cliente.setApellido(apellido);
+		cliente.setDNI(DNI);
+		cliente.setPais(pais);
+		cliente.setDireccion(direccion);
+		
+		//Cuenta cuenta = new Cuenta();
+		//cuenta.setCliente(cliente);
+		//cuenta.setTarjeta(00000000);
+		//cliente.setCuenta(cuenta);
+		
+		//CuentaDAO cuentaDao = CuentaDAOImplementation.getInstance();
+		//cuentaDao.createCuenta(cuenta);
 		
 		ClienteDAO cdao = ClienteDAOImplementation.getInstance();
 		cdao.createCliente(cliente);

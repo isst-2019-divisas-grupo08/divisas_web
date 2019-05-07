@@ -9,41 +9,30 @@ import java.util.*;
 @Entity
 public class Monedero implements Serializable {
 	
-	/*public static enum SYMBOLS {
+	public static enum SYMBOLS {
 			EUR, USD, AUD, CAD, CHF, GBP, JPY,
-			
 	}
 	
 	public static enum DIVISAS {
 		EURO, DOLAR_AMERICANO, DOLAR_AUSTRALIANO, DOLAR_CANADIENSE, FRANCO_SUIZO, LIBRA, YEN, 		
-} */
+	}
 	
 	// Primary key
 	@Id
 	private int id;
 	
-	private String simbolo;
-	private String divisa;
+	private SYMBOLS symbol;
+	private DIVISAS divisa;
+	private double saldo;
 	
-	@OneToOne(fetch=FetchType.EAGER) 
-	public Map<String, Double> saldo = new HashMap<String, Double>();
-	
+    @ManyToOne
+    @JoinColumn(name="cuenta_id", nullable=false)
+    private Cuenta cuenta;
 	
 	
 	// CONSTRUCTOR	
-	public Monedero() {
-		
-		
-		/*this.divisa = divisa;
-		this.cantidad.put(SYMBOLS.EUR, 0.0);
-		this.cantidad.put(SYMBOLS.GBP, 0.0);
-		this.cantidad.put(SYMBOLS.USD, 0.0);
-		this.cantidad.put(SYMBOLS.JPY, 0.0);
-		this.cantidad.put(SYMBOLS.AUD, 0.0);
-		this.cantidad.put(SYMBOLS.CHF, 0.0);
-		this.cantidad.put(SYMBOLS.CAD, 0.0);*/
-		
-		
+	public Monedero(DIVISAS divisa) {
+		this.divisa = divisa;
 	}
 	
 	// Getters y Setters
@@ -55,40 +44,44 @@ public class Monedero implements Serializable {
 		this.id = id;
 	}
 	
-	public String getDivisa() {
+	public DIVISAS getDivisa() {
 		return this.divisa;
 	}
 						
-	public void setDivisa(String divisa) {
+	public void setDivisa(DIVISAS divisa) {
 		this.divisa = divisa;
 	}
 	
-	public String getSimbolo() {
-		return this.simbolo;
+	public SYMBOLS getSimbolo() {
+		return this.symbol;
 	}
 						
-	public void setSimbolo(String simbolo) {
-		this.simbolo = simbolo;
+	public void setSimbolo(SYMBOLS symbol) {
+		this.symbol = symbol;
 	}
 
-	public Map<String, Double> getSaldo() {
+	public SYMBOLS getSymbol() {
+		return symbol;
+	}
+
+	public void setSymbol(SYMBOLS symbol) {
+		this.symbol = symbol;
+	}
+
+	public double getSaldo() {
 		return saldo;
 	}
 
-	public void setSaldo(Map<String, Double> saldo) {
+	public void setSaldo(double saldo) {
 		this.saldo = saldo;
 	}
-	
-	/*public void addSaldo(String divisa, Double saldo) {
-		Double oldSaldo = this.cantidad.get(divisa);
-		cantidad.put(divisa, (oldSaldo+saldo));
-		
+
+	public Cuenta getCuenta() {
+		return cuenta;
+	}
+
+	public void setCuenta(Cuenta cuenta) {
+		this.cuenta = cuenta;
 	}
 	
-	public void lessCantidad(String divisa, Double saldo) {
-		Double oldSaldo = this.cantidad.get(divisa);
-		cantidad.put(divisa, (oldSaldo-saldo));
-		
-	}*/
-
 }

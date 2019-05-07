@@ -27,7 +27,7 @@
 
 	<div class="topnav">
       <div class ="logo">
-        <a href="Home.jsp">
+        <a href="HomeLogin.jsp">
         	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">         
         </a>
       </div>
@@ -41,9 +41,7 @@
       </div>
 
       <div class="userData">
-      <form class="registerForm" method="get" action="LogoutServlet">
-          <input type="submit" value="Salir">
-      </form>
+      <a href="LogoutServlet">Salir</a>
       </div> 
     </div>
     
@@ -79,9 +77,9 @@
 	  			<option value="obtainCHF">CHF</option>
 	  	 	</select>
 	    </div>
-	    
+	    <form method="post" action="/CambiarServlet">
 	    <input type="submit" value="Empezar">
-	    
+	    </form>
 	</div>
 	
   <script src="scripts.js" ></script>

@@ -9,13 +9,11 @@ public interface ClienteDAO {
 	
 	public void createCliente(Cliente cliente);
 
-	public Cliente readCliente(String nombre);
+	public Cliente readCliente(String email);
 
 	public void updateCliente(Cliente cliente);
 
 	public void deleteCliente(Cliente cliente);
-	
-	public Collection<Cliente> readAll();
 
 }
 

@@ -34,6 +34,7 @@ public class LoginServlet extends HttpServlet {
 		Subject currentUser = SecurityUtils.getSubject();
 		if ( !currentUser.isAuthenticated() ) {
 			UsernamePasswordToken token = new UsernamePasswordToken( email, pass );
+			token.setRememberMe(true);
 			try {
 				currentUser.login( token );
 				if(currentUser.hasRole("admin")) {
@@ -46,11 +47,10 @@ public class LoginServlet extends HttpServlet {
 					getServletContext().getRequestDispatcher( "/Login.jsp" ).forward( req,resp );
 				}
 			} catch ( Exception e ) {
-				System.out.println( "No loggeado" );
+				System.out.println( "armaggedon" );
 				resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 			}
 		} else
-			System.out.println( "Usuario no loggeado" );
 			resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 	}
 }

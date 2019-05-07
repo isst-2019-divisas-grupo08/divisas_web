@@ -15,20 +15,24 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Mi Cartera | Tr$ps</title>
+<title>Mis Datos | Tr$ps</title>
 
+<link href="css/MyData.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
+
 </head>
+
 <body>
-	<shiro:hasRole name="cliente">
-    <div class="topnav">
+<shiro:hasRole name="cliente">
+	<div class="topnav">
       <div class ="logo">
-        <a href="Home.jsp">
+        <a href="HomeLogin.jsp">
         	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">         
         </a>
       </div>
 
       <div class="links">
+      	<a href="HomeLogin.jsp" >HOME</a>
         <a href="Wallet.jsp" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
         <a href="Operations.jsp" >OPERACIONES</a>
@@ -36,11 +40,36 @@
       </div>
 
       <div class="userData">
-          <a href="Register.jsp" >REGISTRATE</a>
-          <a href="Login.jsp" >INICIA SESION</a>
-      </div>
-      
+      <a href="/LogoutServlet">Salir</a>
+      </div> 
     </div>
-    </shiro:hasRole> 
-</body>
-</html>
+
+<div class ="misDatos">
+  
+      <h3> Mis Monederos:</h3>
+      <c:choose>
+	    <c:when test="${cliente.cuenta==null}">
+	        <h4>No tienes ningún monedero creado</h4>
+	    </c:when>    
+	    <c:otherwise>
+      <c:forEach items="${cliente.cuenta.monederos}" var="monedero">
+    	<tr>      
+        	<td>${monedero.symbol}</td>
+	        <td>${monedero.saldo}</td>
+	    </tr>
+		</c:forEach>
+	    </c:otherwise>
+	</c:choose>
+	<form action="/CrearMonedero" method="post">
+	<select id="currency" name="currency">
+		  <option value="1" selected>EUR</option>
+		  <option value="2">GBP</option>
+		  <option value="3">USD</option>
+		  <option value="4">JPY</option>
+		  <option value="5">AUD</option>
+		  <option value="6">CAD</option>
+		  <option value="7">CHF</option>	
+	</select>
+	<button action="submit">Crear</button>
+</div>
+</shiro:hasRole>

@@ -7,12 +7,6 @@ import java.util.Set;
 import java.util.ArrayList;
 import java.util.Collection;
 
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-
 import javax.persistence.*;
 
 @Entity
@@ -25,19 +19,37 @@ public class Cliente implements Serializable {
 	private String apellido;
 	private String DNI;
 	private String pais;
+	private String role;
 	private String tratamiento; 
 	private String direccion;
 	private int telefono;
+	
+	public int getClienteId() {
+		return clienteId;
+	}
+
+
+	public void setClienteId(int clienteId) {
+		this.clienteId = clienteId;
+	}
+
+
+	public String getRole() {
+		return role;
+	}
+
+
+	public void setRole(String role) {
+		this.role = role;
+	}
+
+
 	private String sexo;
 	private Date nacimiento;
 
-	@ManyToMany(fetch=FetchType.EAGER)
-    @JoinTable(
-            name = "Cliente_Cuentas", 
-            joinColumns = { @JoinColumn(name = "cliente_id") }, 
-            inverseJoinColumns = { @JoinColumn(name="cuenta_id", nullable=false) }
-    )
-	private Set<Cuenta> cuentas = new HashSet<>();
+    @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL,
+            fetch = FetchType.EAGER)
+	private Cuenta cuenta;
 	
 	public Cliente() {
 		super();
@@ -133,25 +145,12 @@ public class Cliente implements Serializable {
 	}
 
 
-	public long getClientId() {
-		return clienteId;
+	public Cuenta getCuenta() {
+		return cuenta;
 	}
 
 
-	public void setClientId(int clientId) {
-		this.clienteId = clientId;
+	public void setCuenta(Cuenta cuenta) {
+		this.cuenta = cuenta;
 	}
-
-
-	public Set<Cuenta> getCuentas() {
-		return cuentas;
-	}
-
-
-	public void setCuentas(Set<Cuenta> cuentas) {
-		this.cuentas = cuentas;
-	}
-
-
-	
 }

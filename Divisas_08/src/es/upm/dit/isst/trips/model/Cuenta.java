@@ -31,8 +31,10 @@ public class Cuenta implements Serializable {
 		@OneToMany(fetch=FetchType.EAGER,mappedBy="cuenta")
 		private Set<Cambio> historialCambios = new HashSet<>();
 		
-		@ManyToMany(mappedBy = "cuentas")
-		private Set<Cliente> clientes  = new HashSet<>();
+		 
+	    @OneToOne(fetch = FetchType.EAGER)
+	    @JoinColumn(name = "cliente_id")
+	    private Cliente cliente;
 
 		
 		public Cuenta() {
@@ -46,10 +48,6 @@ public class Cuenta implements Serializable {
 		
 		public void setNumeroCuenta(int numeroCuenta) {
 			this.numeroCuenta = numeroCuenta;
-		}
-		
-		public int getTarjeta() {
-			return this.tarjeta;
 		}
 		
 		public void setTarjeta(int tarjeta) {
@@ -81,13 +79,14 @@ public class Cuenta implements Serializable {
 			this.historialCambios = historialCambios;
 		}
 
-		public Set<Cliente> getClientes() {
-			return clientes;
+		public Cliente getCliente() {
+			return cliente;
 		}
 
-		public void setClientes(Set<Cliente> clientes) {
-			this.clientes = clientes;
+		public void setCliente(Cliente cliente) {
+			this.cliente = cliente;
 		}
+
 		
 		
 		// Funciones de Cuenta

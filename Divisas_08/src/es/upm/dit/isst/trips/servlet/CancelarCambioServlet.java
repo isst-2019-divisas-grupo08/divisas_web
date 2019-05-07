@@ -17,9 +17,9 @@ import es.upm.dit.isst.trips.model.Cliente;
 public class CancelarCambioServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		ClienteDAO cdao = ClienteDAOImplementation.getInstance();
-		Collection<Cliente> clientes = cdao.readAll();
-		req.setAttribute("cliente_list", clientes);
+	//	ClienteDAO cdao = ClienteDAOImplementation.getInstance();
+	//	Collection<Cliente> clientes = cdao.readAll();
+	//	req.setAttribute("cliente_list", clientes);
 		getServletContext().getRequestDispatcher( "/Admin.jsp" ).forward( req, resp );
 	}
 
