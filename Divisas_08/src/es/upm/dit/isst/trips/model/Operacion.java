@@ -5,33 +5,34 @@ import java.io.Serializable;
 import java.util.Date;
 
 import javax.persistence.*;
-
-
-@MappedSuperclass
+@Entity
 public class Operacion implements Serializable {
 	
-	public static enum estadoOperacion {
+	/*public static enum estadoOperacion {
 		Denegada, Procesando, Realizada, Cancelada, VACIO,
 		
 	}
 	public enum Tipo{
 		INGRESAR, SACAR, GASTAR, CAMBIO_DIVISAS, CAMBIO_DIVISAS_SACAR,
-	}
+	} */
+	
 	// Primary key
 		@Id
-		protected int idOperacion;
+		private int idOperacion;
 		
-	    protected double saldo;
-	    protected double cantidadDivisa;
-		protected Monedero monederoOrigen;	
-		protected estadoOperacion estado;
-		protected Date fechaOperacion;
-		protected Tipo tipoDivisa;
+		public double cantidad1;
 		
+		@OneToOne(fetch=FetchType.EAGER)
+		protected Monedero monedero1;
 		
-		public Operacion(double saldo) {
-			this.saldo = saldo;
-			this.estado = estadoOperacion.VACIO;
+		private String estado;
+		private Date fechaOperacion;
+		
+		/*@OneToMany(fetch=FetchType.EAGER) 
+		private Cliente cliente; */
+				
+		
+		public Operacion() {
 			
 		}
 
@@ -46,42 +47,42 @@ public class Operacion implements Serializable {
 		}
 
 
-		public double getSaldo() {
+		/*public double getSaldo() {
 			return saldo;
 		}
 
 
 		public void setSaldo(double saldo) {
 			this.saldo = saldo;
+		} */
+
+
+		public double getCantidad1() {
+			return cantidad1;
 		}
 
 
-		public double getCantidadDivisa() {
-			return cantidadDivisa;
+		public void setCantidad1(double cantidad1) {
+			this.cantidad1 = cantidad1;
 		}
 
 
-		public void setCantidadDivisa(double cantidadDivisa) {
-			this.cantidadDivisa = cantidadDivisa;
+		public Monedero getMonedero1() {
+			return monedero1;
 		}
 
 
-		public Monedero getMonederoOrigen() {
-			return monederoOrigen;
+		public void setMonedero1(Monedero monedero1) {
+			this.monedero1 = monedero1;
 		}
 
 
-		public void setMonederoOrigen(Monedero monederoOrigen) {
-			this.monederoOrigen = monederoOrigen;
-		}
-
-
-		public estadoOperacion getEstado() {
+		public String getEstado() {
 			return estado;
 		}
 
 
-		public void setEstado(estadoOperacion estado) {
+		public void setEstado(String estado) {
 			this.estado = estado;
 		}
 
@@ -96,14 +97,7 @@ public class Operacion implements Serializable {
 		}
 		
 
-		public Tipo getTipo() {
-			return tipoDivisa;
-		}
-
-
-		public void setTipo(Tipo tipo) {
-			this.tipoDivisa = tipo;
-		}
+		
 			
 
 }
