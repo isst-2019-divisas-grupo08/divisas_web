@@ -1,6 +1,8 @@
 package es.upm.dit.isst.trips.dao;
 
 import java.util.*;
+
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 
 import es.upm.dit.isst.trips.model.Cliente;
@@ -40,8 +42,7 @@ public class ClienteDAOImplementation implements ClienteDAO {
 		Cliente cliente = null;
 		try {
 			session.beginTransaction();
-			cliente = (Cliente) session.createQuery("select a from Cliente a where a.email = :email")
-					.setParameter("email", email).getSingleResult();
+			cliente = session.get(Cliente.class, email);
 			session.getTransaction().commit();
 		} catch (Exception e) {
 		} finally {

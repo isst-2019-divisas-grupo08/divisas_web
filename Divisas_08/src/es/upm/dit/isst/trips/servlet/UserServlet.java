@@ -27,6 +27,7 @@ public class UserServlet extends HttpServlet {
 			return;
 		}
 		ClienteDAO cdao = ClienteDAOImplementation.getInstance();
+		String email = currentUser.getPrincipal().toString();
 		Cliente currentUserInfo = cdao.readCliente(currentUser.getPrincipal().toString());
 		
 		System.out.println("Current User: "+currentUser.getPrincipal()+"is "+currentUser.isAuthenticated());

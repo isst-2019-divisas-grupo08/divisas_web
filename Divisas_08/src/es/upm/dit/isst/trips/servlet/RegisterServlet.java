@@ -36,6 +36,7 @@ public class RegisterServlet extends HttpServlet {
 		String DNI = req.getParameter( "DNI" );
 		String pais = req.getParameter( "pais" );
 		String direccion = req.getParameter( "direccion" );
+		String tlf = req.getParameter( "telefono" );
 		
 		Cliente cliente = new Cliente();
 		cliente.setEmail( email );
@@ -46,17 +47,18 @@ public class RegisterServlet extends HttpServlet {
 		cliente.setDNI(DNI);
 		cliente.setPais(pais);
 		cliente.setDireccion(direccion);
-		
-		//Cuenta cuenta = new Cuenta();
-		//cuenta.setCliente(cliente);
-		//cuenta.setTarjeta(00000000);
-		//cliente.setCuenta(cuenta);
-		
-		//CuentaDAO cuentaDao = CuentaDAOImplementation.getInstance();
-		//cuentaDao.createCuenta(cuenta);
-		
+		cliente.setTelefono(Integer.parseInt(tlf));
+				
 		ClienteDAO cdao = ClienteDAOImplementation.getInstance();
 		cdao.createCliente(cliente);
+		
+		Cuenta cuenta = new Cuenta();
+		cuenta.setCliente(cliente);
+		cuenta.setTarjeta(00000000);
+		cliente.setCuenta(cuenta);
+		
+		CuentaDAO cuentaDao = CuentaDAOImplementation.getInstance();
+		cuentaDao.createCuenta(cuenta);
 		
 		resp.sendRedirect( req.getContextPath() + "/Login.jsp" );
 	}

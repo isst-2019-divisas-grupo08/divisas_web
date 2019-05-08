@@ -10,6 +10,8 @@ public interface CuentaDAO {
 	public void createCuenta(Cuenta cuenta);
 
 	public Cuenta readCuenta(int numeroCuenta);
+	
+	public Cuenta readCuentaFromUserId(int userId);
 
 	public void updateCuenta(Cuenta cuenta);
 

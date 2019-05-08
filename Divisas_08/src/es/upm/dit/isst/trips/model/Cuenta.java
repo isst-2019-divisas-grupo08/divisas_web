@@ -3,12 +3,8 @@ package es.upm.dit.isst.trips.model;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
-
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
 
 import org.hibernate.annotations.Where;
 
@@ -16,79 +12,87 @@ import javax.persistence.*;
 
 @Entity
 public class Cuenta implements Serializable {
-	
+
 	// Primary key
-		@Id
-		private int numeroCuenta;
-		private int tarjeta;
-		
-		@OneToMany(fetch=FetchType.EAGER,mappedBy="cuenta")
-		private Set<Monedero> monederos = new HashSet<>();
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private int numeroCuenta;
+	private int tarjeta;
 
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true,fetch = FetchType.EAGER)
+	@JoinColumn(name = "cuenta_id")
+	private Set <Monedero> monederos = new HashSet<Monedero>();
 
-		@OneToMany(fetch=FetchType.EAGER,mappedBy="cuenta")
-		private Set<GastoIngreso> hitorialGastosIngresos = new HashSet<>();
-		@OneToMany(fetch=FetchType.EAGER,mappedBy="cuenta")
-		private Set<Cambio> historialCambios = new HashSet<>();
-		
-		 
-	    @OneToOne(fetch = FetchType.EAGER)
-	    @JoinColumn(name = "cliente_id")
-	    private Cliente cliente;
+	@OneToMany(mappedBy = "cuenta",cascade = CascadeType.ALL)
+	private Set<GastoIngreso> hitorialGastosIngresos = new HashSet<>();
+	@OneToMany(mappedBy = "cuenta",cascade = CascadeType.ALL)
+	private Set<Cambio> historialCambios = new HashSet<>();
 
-		
-		public Cuenta() {
-			
-		}
+	@OneToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "cliente_id")
+	private Cliente cliente;
 
-		// Getters y Setters
-		public int getNumeroCuenta() {
-			return this.numeroCuenta;
-		}
-		
-		public void setNumeroCuenta(int numeroCuenta) {
-			this.numeroCuenta = numeroCuenta;
-		}
-		
-		public void setTarjeta(int tarjeta) {
-			this.tarjeta = tarjeta;
-		}
-		
-		
-		public Set<Monedero> getMonederos() {
-			return monederos;
-		}
+	public Cuenta() {
 
-		public void setMonederos(Set<Monedero> monederos) {
-			this.monederos = monederos;
-		}
+	}
 
-		public Set<GastoIngreso> getHitorialGastosIngresos() {
-			return hitorialGastosIngresos;
-		}
+	// Getters y Setters
+	public int getNumeroCuenta() {
+		return this.numeroCuenta;
+	}
 
-		public void setHitorialGastosIngresos(Set<GastoIngreso> hitorialGastosIngresos) {
-			this.hitorialGastosIngresos = hitorialGastosIngresos;
-		}
+	public void setNumeroCuenta(int numeroCuenta) {
+		this.numeroCuenta = numeroCuenta;
+	}
 
-		public Set<Cambio> getHistorialCambios() {
-			return historialCambios;
-		}
+	public void setTarjeta(int tarjeta) {
+		this.tarjeta = tarjeta;
+	}
 
-		public void setHistorialCambios(Set<Cambio> historialCambios) {
-			this.historialCambios = historialCambios;
-		}
+	public Set<Monedero> getMonederos() {
+		return monederos;
+	}
 
-		public Cliente getCliente() {
-			return cliente;
-		}
+	public void setMonederos(Set<Monedero> monederos) {
+		this.monederos = monederos;
+	}
 
-		public void setCliente(Cliente cliente) {
-			this.cliente = cliente;
-		}
+	public void addMonederos(Monedero monedero) {
+		this.monederos.add(monedero);
+	}
 
-		
-		
-		// Funciones de Cuenta
+	public Set<GastoIngreso> getHitorialGastosIngresos() {
+		return hitorialGastosIngresos;
+	}
+
+	public void setHitorialGastosIngresos(Set<GastoIngreso> hitorialGastosIngresos) {
+		this.hitorialGastosIngresos = hitorialGastosIngresos;
+	}
+
+	public void addHitorialGastosIngresos(GastoIngreso gastoIngreso) {
+		this.hitorialGastosIngresos.add(gastoIngreso);
+	}
+
+	public Set<Cambio> getHistorialCambios() {
+		return historialCambios;
+	}
+
+	public void setHistorialCambios(Set<Cambio> historialCambios) {
+		this.historialCambios = historialCambios;
+	}
+
+	public void addHistorialCambios(Cambio cambio) {
+		this.historialCambios.add(cambio);
+	}
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
+
+	// Funciones de Cuenta
 
 }

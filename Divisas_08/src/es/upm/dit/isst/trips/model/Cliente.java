@@ -12,7 +12,6 @@ import javax.persistence.*;
 @Entity
 public class Cliente implements Serializable {
 	@Id
-	private int clienteId;
 	private String email;
 	private String password;
 	private String nombre;
@@ -24,15 +23,6 @@ public class Cliente implements Serializable {
 	private String direccion;
 	private int telefono;
 	
-	public int getClienteId() {
-		return clienteId;
-	}
-
-
-	public void setClienteId(int clienteId) {
-		this.clienteId = clienteId;
-	}
-
 
 	public String getRole() {
 		return role;
@@ -49,6 +39,7 @@ public class Cliente implements Serializable {
 
     @OneToOne(mappedBy = "cliente", cascade = CascadeType.ALL,
             fetch = FetchType.EAGER)
+    @JoinColumn(name = "cuenta_id")
 	private Cuenta cuenta;
 	
 	public Cliente() {
