@@ -34,7 +34,7 @@
 
       <div class="links">
       	<a href="HomeLogin.jsp" >HOME</a>
-        <a href="Wallet.jsp" >MI CARTERA</a>
+        <a href="/WalletServlet" >MI CARTERA</a>
         <a href="MyData.jsp" >MIS DATOS</a>
         <a href="Operations.jsp" >OPERACIONES</a>
         <a href="Help.jsp">AYUDA</a>

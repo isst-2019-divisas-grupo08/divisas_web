@@ -48,11 +48,11 @@
   
       <h3> Mis Monederos:</h3>
       <c:choose>
-	    <c:when test="${cliente.cuenta==null}">
+	    <c:when test="${empty monederos}">
 	        <h4>No tienes ningún monedero creado</h4>
 	    </c:when>    
 	    <c:otherwise>
-      <c:forEach items="${cliente.cuenta.monederos}" var="monedero">
+      <c:forEach items="${monederos}" var="monedero">
     	<tr>      
         	<td>${monedero.symbol}</td>
 	        <td>${monedero.saldo}</td>
@@ -60,7 +60,7 @@
 		</c:forEach>
 	    </c:otherwise>
 	</c:choose>
-	<form action="/CrearMonedero" method="post">
+	<form action="CrearMonederoServlet" method="post">
 	<select id="currency" name="currency">
 		  <option value="1" selected>EUR</option>
 		  <option value="2">GBP</option>
