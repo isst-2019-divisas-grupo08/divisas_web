@@ -100,13 +100,6 @@ public class Monedero implements Serializable {
 		this.divisa = divisa;
 	}
 
-	public SYMBOLS getSimbolo() {
-		return this.symbol;
-	}
-
-	public void setSimbolo(SYMBOLS symbol) {
-		this.symbol = symbol;
-	}
 
 	public SYMBOLS getSymbol() {
 		return symbol;

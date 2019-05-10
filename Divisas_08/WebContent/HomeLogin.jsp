@@ -34,8 +34,8 @@
 
       <div class="links">
       	<a href="HomeLogin.jsp" >HOME</a>
-        <a href="/WalletServlet" >MI CARTERA</a>
-        <a href="MyData.jsp" >MIS DATOS</a>
+        <a href="WalletServlet" >MI CARTERA</a>
+        <a href="UserServlet" >MIS DATOS</a>
         <a href="Operations.jsp" >OPERACIONES</a>
         <a href="Help.jsp">AYUDA</a>
       </div>
@@ -76,12 +76,45 @@
 	  			<option value="obtainCAD">CAD</option>
 	  			<option value="obtainCHF">CHF</option>
 	  	 	</select>
+	  	 	<br>
+	  	 	<select class="comision" id="comisión">
+	  	 		<option value="inmediata" selected>Al día siguiente</option>
+	  			<option value="tresdias">Máximo 3 días</option>
+	  			<option value="siguiente">Una semana</option>
+	  	 	</select>
 	    </div>
+	    
 	    <form method="post" action="/CambiarServlet">
 	    <input type="submit" value="Empezar">
 	    </form>
 	</div>
+		<div class="cambios">
+		<h1>Nuestras tarifas</h1>
+		<div class="normal">
+			<h3><b>Normal:</b> En una semana</h3>
+			<div class="crono">
+				<img class="imgLogo" height="50px" width="50px" src="Assets/Img/cronometer.png">
+			</div>
+		</div>
+		<div class="especial">
+			<h3><b>Especial:</b> Máximo de 3 días</h3>
+			<div class="crono">
+				<img class="imgLogo" height="50px" width="50px" src="Assets/Img/cronometer.png">
+				<img class="imgLogo" height="50px" width="50px" src="Assets/Img/cronometer.png">
+			</div>
+		</div>
+		<div class="premium">
+			<h3><b>Premium:</b> Al día siguiente</h3>
+			<div class="crono">
+				<img class="imgLogo" height="50px" width="50px" src="Assets/Img/cronometer.png">
+				<img class="imgLogo" height="50px" width="50px" src="Assets/Img/cronometer.png">
+				<img class="imgLogo" height="50px" width="50px" src="Assets/Img/cronometer.png">
+			</div>
+		</div>	
+	</div>
 	
+	<div class="footer">
+	</div>
   <script src="scripts.js" ></script>
     </shiro:hasRole>
 </body>

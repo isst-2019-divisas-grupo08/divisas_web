@@ -22,6 +22,7 @@ import es.upm.dit.isst.trips.dao.MonederoDAOImplementation;
 import es.upm.dit.isst.trips.model.Cliente;
 import es.upm.dit.isst.trips.model.Cuenta;
 import es.upm.dit.isst.trips.model.Monedero;
+import es.upm.dit.isst.trips.model.Monedero.SYMBOLS;
 
 /**
  * Servlet implementation class CrearMonedero
@@ -53,13 +54,12 @@ public class CrearMonederoServlet extends HttpServlet {
 		//Generate new monedero
 		MonederoDAO mondao = MonederoDAOImplementation.getInstance();
 		Monedero monedero = new Monedero(concurrency);
-		
+	
 		clientP.getCuenta().getMonederos().add(monedero);
 		cdao.updateCliente(clientP);
 		
 		Cuenta cuenta2 = cuentadao.readCuenta(clientP.getCuenta().getNumeroCuenta());
 		System.out.println(cuenta2.getMonederos());
-		//System.out.println("Llego");
 		
 		response.sendRedirect( request.getContextPath() + "/WalletServlet" );
 

@@ -22,7 +22,10 @@ import es.upm.dit.isst.trips.model.Cliente;
 public class LoginServlet extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
+		Subject currentUser = SecurityUtils.getSubject();
+		if ( !currentUser.isAuthenticated() ) {
+			getServletContext().getRequestDispatcher( "/HomeLogin.jsp" ).forward( req,resp );
+		}
 		getServletContext().getRequestDispatcher( "/Login.jsp" ).forward( req,resp );
 		
 	}
@@ -47,7 +50,6 @@ public class LoginServlet extends HttpServlet {
 					getServletContext().getRequestDispatcher( "/Login.jsp" ).forward( req,resp );
 				}
 			} catch ( Exception e ) {
-				System.out.println( "armaggedon" );
 				resp.sendRedirect( req.getContextPath() + "/LoginErrorServlet" );
 			}
 		} else
