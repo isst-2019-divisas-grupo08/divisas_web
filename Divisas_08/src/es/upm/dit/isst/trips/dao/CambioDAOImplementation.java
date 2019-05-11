@@ -1,7 +1,14 @@
 package es.upm.dit.isst.trips.dao;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.persistence.EntityManager;
+
 import org.hibernate.Session;
 
+import es.upm.dit.isst.g7.dao.EMFService;
+import es.upm.dit.isst.model.SolicitudCambioDivisas;
 import es.upm.dit.isst.trips.model.Cambio;
 
 
@@ -79,5 +86,21 @@ public class CambioDAOImplementation implements CambioDAO {
 			session.close();
 		}
 	}
+	
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Cambio> readAll(){
+		Session session = SessionFactoryService.get().openSession();
+		List<Cambio> solicitudes = new ArrayList<Cambio>();
+		try {
+			session.beginTransaction();
+			solicitudes = session.createQuery("from Cambio").list();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			session.close();
+		}
+		
+		return solicitudes;	}
 
 }
