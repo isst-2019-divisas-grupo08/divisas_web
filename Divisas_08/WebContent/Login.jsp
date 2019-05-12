@@ -30,10 +30,7 @@
       </div>
 
       <div class="links">
-        <a href="Wallet.jsp" >MI CARTERA</a>
-        <a href="MyData.jsp" >MIS DATOS</a>
-        <a href="Operations.jsp" >OPERACIONES</a>
-        <a href="Help.jsp">AYUDA</a>
+        <a href="Home.jsp" >HOME</a>
       </div>
 
       <div class="userData">
@@ -44,53 +41,23 @@
     </div>
       
 
-	<div class= "frontbody">
-	  Inicia sesión para acceder a tu cuenta
-	</div>
-	
-	<form class="loginForm" action="loginServlet">
+<div class= "frontbody">
+  Inicia sesión para acceder a tu cuenta
+</div>
+
+<form method="post" action="LoginServlet">
 
 <div class="user">
 	<input type="email" name="email" placeholder="Email">
 </div>
 
-<div class="pass">
+<div class="user">
 <input type="password" name="password" placeholder="Contraseña"/>
 </div>
-
-
-<!-- 
-
- <select name="tratamiento">
-<option>Don</option>
-<option>Doña</option>
-<option>Sr</option>
-<option>Sra</option>
-</select>
-
-<input type="text" name="nombre" placeholder="Nombre"/>
-
-<input type="text" name="apellido" placeholder="Apellidos"/>
-
-<input type="text" name="dni" placeholder="DNI/NIF"/>
-
-<input type="text" name="pais" placeholder="País"/>
-
- 
- <select name="transporte">
-<option>Hombre</option>
-<option>Mujer</option>
-<option>Otro</option>
-</select>
-
-<input type="number" name="telefono" placeholder="Introduzca su nº de teléfono"/>
-
- -->
  
 
-<input type="submit" value="Registrarse">
+<input type="submit" value="Entrar">
 
 </form>
-
 </body>
 </html>

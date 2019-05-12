@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="shiro" uri="http://shiro.apache.org/tags"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,18 +25,15 @@
 
 <body>
 
-    <nav class="topnav">
+    <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
-        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">           
+          <img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">        
         </a>
       </div>
 
       <div class="links">
-        <a href="Wallet.jsp" >MI CARTERA</a>
-        <a href="MyData.jsp" >MIS DATOS</a>
-        <a href="Operations.jsp" >OPERACIONES</a>
-        <a href="Help.jsp">AYUDA</a>
+        <a href="Home.jsp" >HOME</a>
       </div>
 
       <div class="userData">
@@ -40,28 +41,54 @@
           <a href="Login.jsp" >INICIA SESION</a>
       </div>
       
-    </nav>
+    </div>
+
+<div class= "frontbody">
+	¡Regístrate para disfrutar de Tr$ps!
+</div>
+
+
+<form class="registerForm" method="post" action="RegisterServlet">
+<div class="user">
+<input type="text" name="nombre" placeholder="Nombre"/>
+</div>
+<div class="user">
+<input type="text" name="apellido" placeholder="Apellidos"/>
+</div>
+<div class="user">
+<input type="text" name="dni" placeholder="DNI/NIF"/>
+</div>
+<div class="user">
+<input type="text" name="pais" placeholder="País"/>
+</div>
+<div class="user">
+<input type="text" name="direccion" placeholder="Introduzca su direccion"/>
+</div>
+<div class="user">
+<input type="number" name="telefono" placeholder="Introduzca su nº de teléfono"/>
+</div>
+
+<br><br>
 
 
 
-	<form class="registerForm" action="RegistroServlet">
-	
-		<div class="user">
-			<input type="email" name="email" placeholder="Email">
-		</div>
-		
-		<div class="pass">
-		<input type="password" name="password" placeholder="Contraseña"/>
-		</div>
-		
-		<div class="pass">
-		<input type="password" name="password" placeholder="Confirmar contraseña"/>
-		</div>
+<div class="user">
+	<input type="email" name="email" placeholder="Email">
+</div>
 
-		<input type="submit" value="Continuar">
-	
-	</form>
+<div class="pass">
+<input type="password" name="password" placeholder="Contraseña"/>
+</div>
+
+<div class="pass">
+<input type="password" name="password" placeholder="Confirmar contraseña"/>
+</div>
+ 
+
+<input type="submit" value="Registrarse">
+
+</form>
+
 
 </body>
-
 </html>
