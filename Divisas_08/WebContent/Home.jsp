@@ -43,7 +43,7 @@
     </div>
     
     <div class="mainBody">
-    
+        <img class="foto" align="center" height="500px" width="1350px" src="Assets/Img/bannertrips.jpg">
 	    <div class="selectors">
 	    
 	    	<h1>¡Empieza a cambiar!</h1>
@@ -115,8 +115,9 @@
 	</div>
 	
 	<div class="footer">
+	<br>
+	    <img class="foto" align="center" height="500px" width="1350px" src="Assets/Img/footer.jpg">
 	</div>
-	
 
 	
   <script src="scripts.js" ></script>

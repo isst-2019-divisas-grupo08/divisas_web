@@ -28,7 +28,7 @@
 	<div class="topnav">
       <div class ="logo">
         <a href="HomeLogin.jsp">
-        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">         
+        	<img height="45px" width="45px" src="Assets/Img/moneda.png">         
         </a>
       </div>
 
@@ -47,7 +47,7 @@
     
     
     <div class="selectors">
-    
+    <img class="imgLogo" height="500px" width="1350px" src="Assets/Img/bannertrips.jpg">
     	<h1>¡Empieza a cambiar!</h1>
     
 	    <div class="select">
@@ -112,6 +112,8 @@
 	</div>
 	
 	<div class="footer">
+	<br>
+	    <img class="imgLogo" height="500px" width="1350px" align="center" src="Assets/Img/footer.jpg">
 	</div>
 	
   <script src="scripts.js" ></script>
