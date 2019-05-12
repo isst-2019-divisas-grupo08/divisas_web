@@ -4,71 +4,110 @@ import java.util.Collection;
 import java.io.Serializable;
 import java.util.Date;
 
-import javax.persistence.Id;
+import javax.persistence.*;
 
+
+@MappedSuperclass
 public class Operacion implements Serializable {
-
+	
+	public static enum estadoOperacion {
+		Denegada, Procesando, Realizada, Cancelada, VACIO,
+		
+	}
+	public enum Tipo{
+		INGRESAR, SACAR, GASTAR, CAMBIO_DIVISAS, CAMBIO_DIVISAS_SACAR,
+	}
 	// Primary key
 		@Id
+		@GeneratedValue(strategy = GenerationType.AUTO)
 		protected int idOperacion;
 		
-		protected double cantidad;
-		protected int idMonederoOrigen;	
-		private boolean operacionRealizada;
-		private Date fechaOperacion;
+	    protected double saldo;
+	    protected double cantidadDivisa;
+		protected Monedero monederoOrigen;	
+		protected estadoOperacion estado;
+		protected Date fechaOperacion;
+		protected Tipo tipoDivisa;
 		
 		
 		public Operacion() {
-			this.operacionRealizada = false;
-			
+			this.estado = estadoOperacion.VACIO;	
 		}
 		
-		public Operacion(int idOperacion, double cantidad, int monederoOrigen) {
-			this.idOperacion = idOperacion;
-			this.operacionRealizada = false;
-			this.cantidad = cantidad;
-			this.idMonederoOrigen = monederoOrigen;
+		public Operacion(double saldo) {
+			this.saldo = saldo;
+			this.estado = estadoOperacion.VACIO;	
 		}
-		
-			
+
+
 		public int getIdOperacion() {
 			return idOperacion;
 		}
-		
+
+
 		public void setIdOperacion(int idOperacion) {
 			this.idOperacion = idOperacion;
 		}
-		
-		public boolean getOperacionRealizada() {
-			return operacionRealizada;
+
+
+		public double getSaldo() {
+			return saldo;
 		}
-		
-		public void setOperacionRealizada(boolean operacionRealizada) {
-			this.operacionRealizada = operacionRealizada;
+
+
+		public void setSaldo(double saldo) {
+			this.saldo = saldo;
 		}
-		
-		public double getCantidad() {
-			return cantidad;
+
+
+		public double getCantidadDivisa() {
+			return cantidadDivisa;
 		}
-		
-		public void setCantidad(double cantidad) {
-			this.cantidad = cantidad;
+
+
+		public void setCantidadDivisa(double cantidadDivisa) {
+			this.cantidadDivisa = cantidadDivisa;
 		}
-		
+
+
+		public Monedero getMonederoOrigen() {
+			return monederoOrigen;
+		}
+
+
+		public void setMonederoOrigen(Monedero monederoOrigen) {
+			this.monederoOrigen = monederoOrigen;
+		}
+
+
+		public estadoOperacion getEstado() {
+			return estado;
+		}
+
+
+		public void setEstado(estadoOperacion estado) {
+			this.estado = estado;
+		}
+
+
 		public Date getFechaOperacion() {
 			return fechaOperacion;
 		}
-		
+
+
 		public void setFechaOperacion(Date fechaOperacion) {
 			this.fechaOperacion = fechaOperacion;
 		}
 		
-		public int getIdMonederoOrigen() {
-			return idMonederoOrigen;
+
+		public Tipo getTipo() {
+			return tipoDivisa;
 		}
-		
-		public void setIdMonederoOrigen(int idMonederoOrigen) {
-			this.idMonederoOrigen = idMonederoOrigen;
+
+
+		public void setTipo(Tipo tipo) {
+			this.tipoDivisa = tipo;
 		}
-		
+			
+
 }
