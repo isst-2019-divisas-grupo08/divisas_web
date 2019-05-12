@@ -15,12 +15,12 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Operaciones | Tr$ps</title>
+<title>Ayuda | Tr$ps</title>
 
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<shiro:hasRole name="cliente">
+<shiro:hasRole name="cliente">
 	<div class="topnav">
       <div class ="logo">
         <a href="HomeLogin.jsp">
@@ -40,6 +40,11 @@
       <a href="LogoutServlet">Salir</a>
       </div> 
     </div>
-    </shiro:hasRole>  
+
+      <div class="userData">
+      <a href="/LogoutServlet">Salir</a>
+      </div> 
+    </div>
+  </shiro:hasRole>
 </body>
 </html>

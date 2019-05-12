@@ -23,25 +23,23 @@
 </head>
 
 <body>
-
-	<div class="topnav">
+	<shiro:guest>
+    <div class="topnav">
       <div class ="logo">
         <a href="Home.jsp">
-        	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">         
+          <img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">        
         </a>
       </div>
 
       <div class="links">
-        <a href="Wallet.jsp" >MI CARTERA</a>
-        <a href="MyData.jsp" >MIS DATOS</a>
-        <a href="Operations.jsp" >OPERACIONES</a>
-        <a href="Help.jsp">AYUDA</a>
+        <a href="Home.jsp" >HOME</a>
       </div>
 
       <div class="userData">
           <a href="Register.jsp" >REGISTRATE</a>
           <a href="Login.jsp" >INICIA SESION</a>
-      </div> 
+      </div>
+      
     </div>
     
     <div class="mainBody">
@@ -77,9 +75,9 @@
 		  			<option value="obtainCHF">CHF</option>
 		  	 	</select>
 		    </div>
-		    
+		    <form method="post" action=LoginServlet>
 		    <input type="submit" value="Empezar">
-		    
+			</form>
 		</div>
 		
 		<div class="register">
@@ -122,6 +120,6 @@
 
 	
   <script src="scripts.js" ></script>
-      
+ </shiro:guest>
 </body>
 </html>

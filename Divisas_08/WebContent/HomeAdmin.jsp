@@ -15,31 +15,35 @@
 <meta name="description" content="">
 <meta name="author" content="">
 
-<title>Operaciones | Tr$ps</title>
+<title>Home | Tr$ps</title>
 
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
+<link href="css/Home.css" rel="stylesheet" type="text/css">
+
 </head>
+
 <body>
-	<shiro:hasRole name="cliente">
+	
+<shiro:hasRole name="admin">
 	<div class="topnav">
       <div class ="logo">
-        <a href="HomeLogin.jsp">
+        <a href="HomeAdmin.jsp">
         	<img class="imgLogo" height="45px" width="45px" src="Assets/Img/moneda.png">         
         </a>
       </div>
 
       <div class="links">
-      	<a href="HomeLogin.jsp" >HOME</a>
-        <a href="WalletServlet" >MI CARTERA</a>
-        <a href="UserServlet" >MIS DATOS</a>
-        <a href="Operations.jsp" >OPERACIONES</a>
-        <a href="Contactos.jsp">CONTACTOS</a>
+      	<a href="HomeAdmin.jsp" >HOME</a>
+        <a href="DataAdmin.jsp" >MIS DATOS</a>
+        <a href="Clients.jsp" >GESTIÓN DE CLIENTES</a>
+        <a href="AdminClients.jsp" >ADMINISTRACIÓN DE CLIENTES</a>
       </div>
 
       <div class="userData">
       <a href="LogoutServlet">Salir</a>
-      </div> 
+      </div>
     </div>
-    </shiro:hasRole>  
+    
+   </shiro:hasRole>
 </body>
 </html>
