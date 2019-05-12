@@ -44,6 +44,7 @@
       </div> 
     </div>
 
+    <img class="imgLogo" height="500px" width="1330px" src="Assets/Img/misdatos.jpg">
 
 <div class ="misDatos">
     <h3>Nombre: ${cliente.nombre}</h3>

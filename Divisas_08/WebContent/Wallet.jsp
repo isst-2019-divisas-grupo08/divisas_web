@@ -43,9 +43,8 @@
       <a href="LogoutServlet">Salir</a>
       </div> 
     </div>
-
+    <img class="imgLogo" height="500px" width="1325px" src="Assets/Img/micartera.jpg">
 		<div class="misDatos">
-
 			<h3>Mis Monederos:</h3>
 			<c:choose>
 				<c:when test="${empty monederos}">

@@ -16,7 +16,7 @@
 <meta name="author" content="">
 
 <title>Iniciar Sesión | Tr$ps</title>
-
+<link href="css/Register.css" rel="stylesheet" type="text/css">
 <link href="css/Login.css" rel="stylesheet" type="text/css">
 <link href="css/Nav-Bar.css" rel="stylesheet" type="text/css">
 </head>
@@ -45,7 +45,7 @@
   Inicia sesión para acceder a tu cuenta
 </div>
 
-<form method="post" action="LoginServlet">
+<form class="registerForm" method="post" action="LoginServlet">
 
 <div class="user">
 	<input type="email" name="email" placeholder="Email">
